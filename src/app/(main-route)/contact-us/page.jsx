@@ -2,7 +2,7 @@ import React from 'react';
 
 const ContactPage = () => {
     return (
-        <div>
+        <div className='min-h-minus-header'>
             this is contact page
         </div>
     );

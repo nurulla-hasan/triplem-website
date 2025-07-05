@@ -6,14 +6,14 @@ import { ArrowRight } from "lucide-react"
 const Hero = () => {
   return (
     <div
-      className="relative w-full min-h-[calc(100vh-81px)] flex items-center justify-center text-center bg-cover bg-no-repeat"
+      className="relative w-full min-h-minus-header flex items-center justify-center text-center bg-cover bg-no-repeat"
       style={{
         backgroundImage: "url('/images/hero.jpg')",
         backgroundPosition: "center bottom",
       }}
     >
       {/* Dark overlay for better text readability */}
-      <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/80 to-black/0"></div>
+      <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/85 to-black/20"></div>
 
       {/* Content above the overlay */}
       <div className="relative z-20 container mx-auto px-4">

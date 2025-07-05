@@ -1,8 +1,8 @@
-import React from 'react';
+"use client";
 
 const ProfilePage = () => {
     return (
-        <div>
+        <div className="min-h-minus-header">
             this is profile page
         </div>
     );

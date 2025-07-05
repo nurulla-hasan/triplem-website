@@ -139,3 +139,7 @@ body {
 .font-custom {
   font-family: var(--font-poltawski);
 }
+
+.min-h-minus-header { 
+  min-height: calc(100vh - 80.8px);
+}

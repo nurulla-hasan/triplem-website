@@ -48,7 +48,7 @@ const Footer = () => {
                     </div>
                 </div>
 
-                <div className="border-b border-gray-700 w-full"></div>
+                <div className="border-b border-gray-500 w-full"></div>
 
 
                 {/* Main Footer Content */}

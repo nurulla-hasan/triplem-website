@@ -171,11 +171,11 @@ const CartPage = () => {
                                                 </div>
                                             </div>
                                             <div className="flex justify-between items-center pl-8">
-                                                <div className="flex items-center border rounded-md">
+                                                <div className="flex items-center border rounded-md overflow-hidden">
                                                     <Button
                                                         variant="outline"
                                                         size="icon"
-                                                        className="w-10 h-10 rounded-none"
+                                                        className="w-8 h-8 rounded-none border-0 border-r"
                                                         onClick={() => handleQuantityChange(item.id, "decrement")}
                                                     >
                                                         <Minus className="size-4 text-gray-600" />
@@ -184,7 +184,7 @@ const CartPage = () => {
                                                     <Button
                                                         variant="outline"
                                                         size="icon"
-                                                        className="w-10 h-10 rounded-none"
+                                                        className="w-8 h-8 rounded-none border-0 border-l"
                                                         onClick={() => handleQuantityChange(item.id, "increment")}
                                                     >
                                                         <Plus className="size-4 text-gray-600" />
@@ -221,7 +221,7 @@ const CartPage = () => {
                                 </div>
                             </div>
                             <Separator className="my-6" />
-                            <Link href="/checkout" className="w-full">
+                            <Link href="/cart/checkout" className="w-full">
                                 <Button className="w-full font-medium py-3 rounded-md">
                                     Check out
                                 </Button>

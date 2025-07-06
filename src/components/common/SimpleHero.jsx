@@ -20,7 +20,7 @@ const SimpleHero = ({
   const displayTitle = title;
 
   return (
-    <section className="relative h-30 sm:h-60 flex items-center">
+    <section className="relative h-30 sm:h-60 md:px-5 flex items-center">
       {/* Background Image with Overlay */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"

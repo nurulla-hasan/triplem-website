@@ -170,7 +170,7 @@ const Navbar = () => {
                                             <DropdownMenuSeparator />
                                             <DropdownMenuItem>
                                                 <ShoppingBasket className="mr-2 h-4 w-4" />
-                                                <Link href="/profile">My Order</Link>
+                                                <Link href="/my-orders">My Order</Link>
                                             </DropdownMenuItem>
                                             <DropdownMenuSeparator />
                                             <DropdownMenuItem>

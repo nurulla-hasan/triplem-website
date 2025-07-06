@@ -242,3 +242,90 @@ export const initialCartItems = [
     selected: false,
   },
 ];
+
+export const orders = [
+  {
+    id: "1",
+    orderNumber: "#123456",
+    date: "12/03/25",
+    product: {
+      name: "Ultimate Player T-Shirt",
+      qty: 2,
+      image: "/images/product (1).png",
+    },
+    total: 48.00,
+    status: "In-progress",
+  },
+  {
+    id: "2",
+    orderNumber: "#123457",
+    date: "10/03/25",
+    product: {
+      name: "Pokemon TCG Collectors",
+      qty: 2,
+      image: "/images/product (2).png",
+    },
+    total: 55.00,
+    status: "Shipped",
+  },
+  {
+    id: "3",
+    orderNumber: "#123458",
+    date: "09/03/25",
+    product: {
+      name: "Champion's Workout Tee",
+      qty: 2,
+      image: "/images/product (3).png",
+    },
+    total: 96.00,
+    status: "In-progress",
+  },
+  {
+    id: "4",
+    orderNumber: "#123459",
+    date: "07/03/25",
+    product: {
+      name: "Great Ball Mystery Bag",
+      qty: 2,
+      image: "/images/product (4).png",
+    },
+    total: 24.00,
+    status: "Delivered",
+  },
+  {
+    id: "5",
+    orderNumber: "#123460",
+    date: "06/03/25",
+    product: {
+      name: "Pokemon TCG Collectors",
+      qty: 2,
+      image: "/images/product (5).png",
+    },
+    total: 56.00,
+    status: "Delivered",
+  },
+  {
+    id: "6",
+    orderNumber: "#123461",
+    date: "05/03/25",
+    product: {
+      name: "Victory Training Tee",
+      qty: 2,
+      image: "/images/product (6).png",
+    },
+    total: 92.00,
+    status: "Delivered",
+  },
+  {
+    id: "7",
+    orderNumber: "#123462",
+    date: "01/03/25",
+    product: {
+      name: "Pokemon TCG Collectors",
+      qty: 2,
+      image: "/images/product (7).png",
+    },
+    total: 78.00,
+    status: "Delivered",
+  },
+];

@@ -61,8 +61,7 @@ const Footer = () => {
                                     src="/images/logo.png"
                                     alt="TripleM Collectibles Logo"
                                     fill
-                                    objectFit="contain"
-                                    objectPosition="left"
+                                    sizes="150px"
                                 />
                             </div>
                             <p className="text-gray-300 text-sm leading-relaxed">

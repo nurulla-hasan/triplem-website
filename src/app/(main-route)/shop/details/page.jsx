@@ -12,9 +12,9 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import StarRating from "@/components/shop/details/StarRating";
-
 import { productDetailsDataMap } from "@/data/data";
 import { Separator } from "@/components/ui/separator";
+import SimilarProducts from "@/components/shop/details/SimilarProducts";
 
 const DetailsPage = () => {
     const product = productDetailsDataMap["1"];
@@ -91,7 +91,7 @@ const DetailsPage = () => {
                     </div>
 
                     {/* Product Details */}
-                    <div className="space-y-6">
+                    <div className="space-y-4">
                         {/* Price and Title */}
                         <div className="flex flex-col gap-2">
                                 {product.discount && (
@@ -156,7 +156,7 @@ const DetailsPage = () => {
                                             size="sm"
                                             className={cn(
                                                 "rounded-md px-4 py-2 text-sm",
-                                                selectedSize === size ? "bg-primary/20 text-primary" : "text-subtitle hover:bg-gray-100"
+                                                selectedSize === size ? "bg-primary/20 hover:bg-primary/20 text-primary" : "text-subtitle hover:bg-gray-100"
                                             )}
                                             onClick={() => setSelectedSize(size)}
                                         >
@@ -247,7 +247,7 @@ const DetailsPage = () => {
                                                     </div>
 
                                                     <h4 className="text-subtitle text-sm font-semibold mb-4">Showing {Math.min(tab.reviews, 4)} results</h4>
-                                                    <ScrollArea className="h-[470px] pr-4">
+                                                    <ScrollArea className="h-[510px] pr-4">
                                                         <div className="space-y-4">
                                                             {/* Only show the first 4 reviews */}
                                                             {tab.content && tab.content.slice(0, 4).map((review) => (
@@ -288,6 +288,9 @@ const DetailsPage = () => {
                         </div>
                     </div>
                 </div>
+
+                {/* Similar Products */}
+                <SimilarProducts />
 
             </PageLayout>
         </div>

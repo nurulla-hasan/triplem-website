@@ -191,3 +191,54 @@ export const productDetailsDataMap = {
     ],
   },
 };
+
+export const initialCartItems = [
+  {
+    id: "1",
+    image: "/images/product (1).png",
+    name: "Great Ball Mystery Bag",
+    price: 40.00,
+    quantity: 2,
+    selected: false,
+  },
+  {
+    id: "2",
+    image: "/images/product (2).png",
+    name: "Pokemon Assorted Booster Packs",
+    price: 35.00,
+    quantity: 1,
+    selected: false,
+  },
+  {
+    id: "3",
+    image: "/images/product (3).png",
+    name: "Ultimate Player T-Shirt",
+    price: 55.00,
+    quantity: 4,
+    selected: false,
+  },
+  {
+    id: "4",
+    image: "/images/product (4).png",
+    name: "Pokemon TCG Collectors",
+    price: 30.00,
+    quantity: 2,
+    selected: false,
+  },
+  {
+    id: "5",
+    image: "/images/product (5).png",
+    name: "Victory Training Tee",
+    price: 65.00,
+    quantity: 3,
+    selected: false,
+  },
+  {
+    id: "6",
+    image: "/images/product (6).png",
+    name: "Champion's Workout Tee",
+    price: 50.00,
+    quantity: 2,
+    selected: false,
+  },
+];

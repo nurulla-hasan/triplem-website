@@ -1,9 +1,67 @@
 "use client";
 
+import SimpleHero from "@/components/common/SimpleHero";
+import PageLayout from "@/components/layout/PageLayout";
+import { products } from "@/data/data";
+import { Heart, Star } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+
 const Wishlist = () => {
+    const heroLinks = [
+        { name: "Home", href: "/" }, 
+        { name: "Favorite", isCurrent: true }
+    ];
     return (
         <div className="min-h-minus-header">
-            this is wishlist page
+            <SimpleHero title="Favorite" links={heroLinks} />
+
+            <PageLayout>
+                <div className="text-subtitle mb-4">
+                    Showing {products.length} results
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    {products.map((product) => (
+                        <Link href={`/shop/details?id=${product.id}`} key={product.id} className="block group">
+                            <div className="p-1">
+                                <div className="overflow-hidden relative">
+                                    {/* Product Image */}
+                                    <div className="relative w-full rounded-xl aspect-[5/6] bg-gray-100 flex items-center justify-center overflow-hidden">
+                                        <Image
+                                            src={product.image}
+                                            alt={product.title}
+                                            fill
+                                            className="object-cover"
+                                            sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                                        />
+                                        <div className="absolute top-2 right-2 z-10 bg-primary/10 backdrop-blur-xs rounded-full p-2">
+                                            <Heart className="w-6 h-6 text-primary fill-/10" />
+                                        </div>
+                                    </div>
+
+                                    <div className="mt-4 px-2">
+                                        <h3 className="text-sm font-medium text-gray-900 line-clamp-1 mb-1">{product.title}</h3>
+                                        <div className="flex justify-between items-center">
+                                            <div className="flex items-baseline space-x-2 mb-2">
+                                                <span className="text-lg font-semibold text-title">{product.currency}{product.price}</span>
+                                                {product.oldPrice && (
+                                                    <span className="text-sm text-subtitle line-through">
+                                                        {product.currency}{product.oldPrice}
+                                                    </span>
+                                                )}
+                                            </div>
+                                            <p className="flex items-center gap-1 text-sm">
+                                                <Star className="w-4 h-4 text-yellow-500" />
+                                                {product.rating}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </Link>
+                    ))}
+                </div>
+            </PageLayout>
         </div>
     );
 };

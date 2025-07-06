@@ -20,7 +20,7 @@ import {
 
 const MyOrdersPage = () => {
     const heroLinks = [
-        { name: "Home", href: "/" },
+        { name: "Home", href: "/" }, 
         { name: "My Orders", isCurrent: true }
     ];
 

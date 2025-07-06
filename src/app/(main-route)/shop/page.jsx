@@ -2,7 +2,7 @@
 import { useState } from "react";
 import PageLayout from "@/components/layout/PageLayout";
 import { Input } from "@/components/ui/input";
-import { Search, Star, Filter } from "lucide-react";
+import { Search, Star, Filter, Heart } from "lucide-react";
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -224,7 +224,7 @@ const ShopPage = () => {
                             </DropdownMenu>
                         </div>
                     </div>
-                </div> 
+                </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-7 gap-6 min-h-screen mt-4">
                     {/* Desktop Filter Column (md:col-span-2) */}
@@ -357,7 +357,7 @@ const ShopPage = () => {
                             {products.map((product) => (
                                 <Link href={`/shop/details?id=${product.id}`} key={product.id} className="block">
                                     <div className="p-1">
-                                        <div className="overflow-hidden">
+                                        <div className="overflow-hidden relative">
                                             {/* Product Image */}
                                             <div className="relative w-full rounded-xl aspect-[5/6] bg-gray-100 flex items-center justify-center overflow-hidden">
                                                 <Image
@@ -367,6 +367,9 @@ const ShopPage = () => {
                                                     className="object-cover"
                                                     sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                                                 />
+                                                <div className="absolute top-2 right-2 z-10 bg-primary/10 backdrop-blur-xs rounded-full p-2">
+                                                    <Heart className="w-6 h-6 text-primary fill-/10" />
+                                                </div>
                                             </div>
 
                                             <div className="mt-4 px-2">

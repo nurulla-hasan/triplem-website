@@ -141,5 +141,5 @@ body {
 }
 
 .min-h-minus-header { 
-  min-height: calc(100vh - 80.8px);
+  min-height: calc(100vh - 81px);
 }

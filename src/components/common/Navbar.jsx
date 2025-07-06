@@ -4,16 +4,16 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
-import { Search, Heart, User, ShoppingBag, Menu, LogOut, UserPlus, ChevronDown, ChevronUp, X } from "lucide-react";
+import { Search, Heart, User, ShoppingBag, Menu, LogOut, UserPlus, ChevronDown, ChevronUp, X, ListOrdered, ShoppingBasket } from "lucide-react";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
 
 
 const Navbar = () => {
-    const [isLoggedIn, setIsLoggedIn] = useState(true); // Simulate login status
-    const [userName, setUserName] = useState("Mr.John Doe"); // Simulate user name
-    const [showSearchInput, setShowSearchInput] = useState(false); // State for search input visibility
+    const [isLoggedIn, setIsLoggedIn] = useState(true);
+    const [userName, setUserName] = useState("John Doe");
+    const [showSearchInput, setShowSearchInput] = useState(false);
 
     const pathname = usePathname();
 
@@ -52,6 +52,15 @@ const Navbar = () => {
                                         <SheetTitle className="sr-only">Main Menu</SheetTitle>
                                         <SheetDescription className="sr-only">Navigation links for the website.</SheetDescription>
                                     </SheetHeader>
+                                    {/* Search Input in Mobile Sidebar */}
+                                    <div className="relative px-5">
+                                        <Input
+                                            type="text"
+                                            placeholder="Search..."
+                                            className="pl-10 w-full"
+                                        />
+                                        <Search size={18} className="text-subtitle/70 absolute left-8 top-1/2 -translate-y-1/2" />
+                                    </div>
                                     <nav className="mt-6 flex flex-col space-y-4 pl-8">
                                         {navLinks.map((link) => (
                                             <Link
@@ -64,15 +73,7 @@ const Navbar = () => {
                                             </Link>
                                         ))}
                                     </nav>
-                                    {/* Search Input in Mobile Sidebar */}
-                                    <div className="relative mt-6 mb-4 px-8">
-                                        <Input
-                                            type="text"
-                                            placeholder="Search..."
-                                            className="pl-10 w-full"
-                                        />
-                                        <Search size={20} className="text-gray-600 absolute left-10 top-1/2 -translate-y-1/2" />
-                                    </div>
+
                                 </SheetContent>
                             </Sheet>
                         </div>
@@ -116,14 +117,12 @@ const Navbar = () => {
                                             className="w-48 pl-8 transition-all duration-300 ease-in-out"
                                         />
                                         <Search size={16} className="absolute left-2 text-gray-500" />
-                                        <Button
-                                            variant="ghost"
-                                            size="icon"
-                                            className="absolute right-0"
+                                        <button
+                                            className="absolute right-0 p-2 cursor-pointer"
                                             onClick={() => setShowSearchInput(false)}
                                         >
                                             <X size={16} />
-                                        </Button>
+                                        </button>
                                     </div>
                                 ) : (
                                     <Button variant="ghost" size="icon" className="hover:bg-gray-100" onClick={() => setShowSearchInput(true)}>
@@ -144,7 +143,7 @@ const Navbar = () => {
                             </Link>
 
                             {/* User Profile Icon */}
-                            <DropdownMenu forceMount>
+                            <DropdownMenu>
                                 <DropdownMenuTrigger asChild>
                                     <div className="flex items-center cursor-pointer">
                                         <Button variant="ghost" size="icon" className="hover:bg-gray-100">
@@ -152,36 +151,33 @@ const Navbar = () => {
                                             <span className="sr-only">Profile</span>
                                         </Button>
                                         {isLoggedIn && (
-                                            <span className="hidden md:block text-subtitle text-sm font-medium">{userName}</span>
+                                            <div className="flex items-center gap-1">
+                                                <span className="hidden md:block text-subtitle text-sm font-medium">{userName}</span>
+                                                <ChevronDown className="hidden md:block h-4 w-4 text-gray-600" />
+                                            </div>
                                         )}
-                                        {
-                                            isLoggedIn && (
-                                                <Button variant="ghost" size="icon" className="hidden md:block hover:bg-gray-100">
-                                                    <ChevronDown className="h-5 w-5 text-gray-600" />
-                                                </Button>
-                                            )
-                                        }
                                     </div>
                                 </DropdownMenuTrigger>
-                                <DropdownMenuContent className="md:w-48 overflow-y-auto z-50 relative">
-                                    {isLoggedIn && (
+                                <DropdownMenuContent className="md:w-48">
+                                    {isLoggedIn ? (
                                         <div>
                                             <DropdownMenuLabel className="md:hidden text-center">{userName}</DropdownMenuLabel>
                                             <DropdownMenuSeparator className={"md:hidden"} />
-                                        </div>
-                                    )}
-                                    {isLoggedIn ? (
-                                        <>
                                             <DropdownMenuItem>
                                                 <User className="mr-2 h-4 w-4" />
-                                                <Link href="/profile">Profile</Link>
+                                                <Link href="/profile">My Account</Link>
+                                            </DropdownMenuItem>
+                                            <DropdownMenuSeparator />
+                                            <DropdownMenuItem>
+                                                <ShoppingBasket className="mr-2 h-4 w-4" />
+                                                <Link href="/profile">My Order</Link>
                                             </DropdownMenuItem>
                                             <DropdownMenuSeparator />
                                             <DropdownMenuItem>
                                                 <LogOut className="mr-2 h-4 w-4 text-red-500" />
                                                 <button onClick={() => setIsLoggedIn(false)}>Logout</button>
                                             </DropdownMenuItem>
-                                        </>
+                                        </div>
                                     ) : (
                                         <>
                                             <DropdownMenuItem>
@@ -197,9 +193,6 @@ const Navbar = () => {
                                     )}
                                 </DropdownMenuContent>
                             </DropdownMenu>
-                            {/* {isLoggedIn && (
-                            <span className="hidden md:block text-title text-sm font-medium">{userName}</span>
-                        )} */}
 
                             {/* Shopping Cart Icon */}
                             <Link href="/cart">
@@ -208,7 +201,7 @@ const Navbar = () => {
                                     <span className="sr-only">Shopping Cart</span>
                                     {/* Optional cart count badge */}
                                     <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-4 w-4 flex items-center justify-center">3</span>
-                                </Button> 
+                                </Button>
                             </Link>
                         </div>
                     </div>

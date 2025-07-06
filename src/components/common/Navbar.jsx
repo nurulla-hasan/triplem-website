@@ -4,14 +4,16 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
-import { Search, Heart, User, ShoppingBag, Menu, LogOut, UserPlus, ChevronDown, ChevronUp } from "lucide-react";
+import { Search, Heart, User, ShoppingBag, Menu, LogOut, UserPlus, ChevronDown, ChevronUp, X } from "lucide-react";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { useState } from "react";
+import { Input } from "@/components/ui/input";
 
 
 const Navbar = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(true); // Simulate login status
     const [userName, setUserName] = useState("Mr.John Doe"); // Simulate user name
+    const [showSearchInput, setShowSearchInput] = useState(false); // State for search input visibility
 
     const pathname = usePathname();
 
@@ -62,6 +64,15 @@ const Navbar = () => {
                                             </Link>
                                         ))}
                                     </nav>
+                                    {/* Search Input in Mobile Sidebar */}
+                                    <div className="relative mt-6 mb-4 px-8">
+                                        <Input
+                                            type="text"
+                                            placeholder="Search..."
+                                            className="pl-10 w-full"
+                                        />
+                                        <Search size={20} className="text-gray-600 absolute left-10 top-1/2 -translate-y-1/2" />
+                                    </div>
                                 </SheetContent>
                             </Sheet>
                         </div>
@@ -95,11 +106,34 @@ const Navbar = () => {
 
                         {/* Right Action Icons */}
                         <div className="flex items-center space-x-2 lg:ml-auto">
-                            {/* Search Icon */}
-                            <Button variant="ghost" size="icon" className="hover:bg-gray-100">
-                                <Search className="h-5 w-5 text-gray-600" />
-                                <span className="sr-only">Search</span>
-                            </Button>
+                            {/* Desktop Search */}
+                            <div className="hidden md:block">
+                                {showSearchInput ? (
+                                    <div className="relative flex items-center">
+                                        <Input
+                                            type="text"
+                                            placeholder="Search..."
+                                            className="w-48 pl-8 transition-all duration-300 ease-in-out"
+                                        />
+                                        <Search size={16} className="absolute left-2 text-gray-500" />
+                                        <Button
+                                            variant="ghost"
+                                            size="icon"
+                                            className="absolute right-0"
+                                            onClick={() => setShowSearchInput(false)}
+                                        >
+                                            <X size={16} />
+                                        </Button>
+                                    </div>
+                                ) : (
+                                    <Button variant="ghost" size="icon" className="hover:bg-gray-100" onClick={() => setShowSearchInput(true)}>
+                                        <Search className="h-5 w-5 text-gray-600" />
+                                        <span className="sr-only">Search</span>
+                                    </Button>
+                                )}
+                            </div>
+
+
 
                             {/* Heart/Favorites Icon */}
                             <Link href="/wishlist">
@@ -122,7 +156,7 @@ const Navbar = () => {
                                         )}
                                         {
                                             isLoggedIn && (
-                                                <Button variant="ghost" size="icon" className="hover:bg-gray-100">
+                                                <Button variant="ghost" size="icon" className="hidden md:block hover:bg-gray-100">
                                                     <ChevronDown className="h-5 w-5 text-gray-600" />
                                                 </Button>
                                             )
@@ -168,12 +202,14 @@ const Navbar = () => {
                         )} */}
 
                             {/* Shopping Cart Icon */}
-                            <Button variant="ghost" size="icon" className="hover:bg-gray-100 relative">
-                                <ShoppingBag className="h-5 w-5 text-gray-600" />
-                                <span className="sr-only">Shopping Cart</span>
-                                {/* Optional cart count badge */}
-                                <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-4 w-4 flex items-center justify-center">3</span>
-                            </Button>
+                            <Link href="/cart">
+                                <Button variant="ghost" size="icon" className="hover:bg-gray-100 relative">
+                                    <ShoppingBag className="h-5 w-5 text-gray-600" />
+                                    <span className="sr-only">Shopping Cart</span>
+                                    {/* Optional cart count badge */}
+                                    <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-4 w-4 flex items-center justify-center">3</span>
+                                </Button> 
+                            </Link>
                         </div>
                     </div>
                 </div>

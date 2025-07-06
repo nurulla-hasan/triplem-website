@@ -2,7 +2,7 @@ import React from 'react';
 
 const CartPage = () => {
     return (
-        <div>
+        <div className='min-h-minus-header'>
             this is cart page
         </div>
     );

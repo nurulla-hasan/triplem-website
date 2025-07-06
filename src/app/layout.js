@@ -1,15 +1,19 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 import NextTopLoader from "nextjs-toploader";
+import { Poltawski_Nowy } from "next/font/google";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const poltawski = Poltawski_Nowy({
+  variable: "--font-poltawski",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+// Load Poppins
+const poppins = Poppins({
+  variable: "--font-poppins",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata = {
@@ -21,16 +25,14 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`
+          ${poppins.variable}
+          ${poltawski.variable}
+          antialiased container mx-auto max-w-[1920px]
+        `}
       >
-        <NextTopLoader
-          color="#E4AF00"
-          height={2}
-          showSpinner={false}
-        />
-        <div className="container mx-auto max-w-[1920px]">
-          {children}
-        </div>
+        <NextTopLoader color="#E4AF00" height={2} showSpinner={false} />
+        {children}
       </body>
     </html>
   );

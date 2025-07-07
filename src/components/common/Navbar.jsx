@@ -70,7 +70,7 @@ const Navbar = () => {
                                             <Link
                                                 key={link.name}
                                                 href={link.href}
-                                                className={`font-medium text-subtitle hover:text-title transition-colors ${pathname === link.href ? "underline font-bold" : ""
+                                                className={`font-medium text-subtitle hover:text-title transition-colors ${pathname === link.href ? "text-title underline font-bold" : ""
                                                     }`}
                                             >
                                                 {link.name}

@@ -17,7 +17,7 @@ const Wishlist = () => {
         // Add your wishlist logic here
         console.log(`Product ${productId} added to wishlist`);
     };
-    
+
     return (
         <div className="min-h-minus-header">
             <SimpleHero title="Favorite" links={heroLinks} />
@@ -28,7 +28,7 @@ const Wishlist = () => {
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                     {products.map((product) => (
-                        <div className="p-1">
+                        <div key={product.id} className="p-1">
                             <div className="overflow-hidden relative">
                                 {/* Product Image */}
                                 <Link href={`/shop/details?id=${product.id}`}>

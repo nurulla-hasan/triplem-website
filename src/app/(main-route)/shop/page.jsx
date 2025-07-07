@@ -63,6 +63,12 @@ const ShopPage = () => {
         setSelectedRating(starNum);
     };
 
+    const handleWishlistClick = (e, productId) => {
+        e.stopPropagation();
+        // Add your wishlist logic here
+        console.log(`Product ${productId} added to wishlist`);
+    };
+
     const breadcrumbLinks = [
         { name: "Home", href: "/" },
         { name: "Shop", isCurrent: true }
@@ -89,35 +95,35 @@ const ShopPage = () => {
                                     {/* Category Filter */}
                                     <Accordion type="single" collapsible defaultValue="category">
                                         <AccordionItem value="category" className="border-b border-gray-200">
-                                            <AccordionTrigger className="text-lg font-medium text-gray-700 hover:no-underline">Category</AccordionTrigger>
+                                            <AccordionTrigger className="text-lg font-medium text-subtitle hover:no-underline">Category</AccordionTrigger>
                                             <AccordionContent className="pt-2 pb-4 space-y-3">
                                                 <div className="flex items-center space-x-2">
                                                     <Checkbox id="pokemon-mobile" />
-                                                    <label htmlFor="pokemon-mobile" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-gray-600">
+                                                    <label htmlFor="pokemon-mobile" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-subtitle">
                                                         Pokémon
                                                     </label>
                                                 </div>
                                                 <div className="flex items-center space-x-2">
                                                     <Checkbox id="basketball-mobile" />
-                                                    <label htmlFor="basketball-mobile" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-gray-600">
+                                                    <label htmlFor="basketball-mobile" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-subtitle">
                                                         Basketball
                                                     </label>
                                                 </div>
                                                 <div className="flex items-center space-x-2">
                                                     <Checkbox id="football-mobile" />
-                                                    <label htmlFor="football-mobile" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-gray-600">
+                                                    <label htmlFor="football-mobile" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-subtitle">
                                                         Football
                                                     </label>
                                                 </div>
                                                 <div className="flex items-center space-x-2">
                                                     <Checkbox id="baseball-mobile" />
-                                                    <label htmlFor="baseball-mobile" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-gray-600">
+                                                    <label htmlFor="baseball-mobile" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-subtitle">
                                                         Baseball
                                                     </label>
                                                 </div>
                                                 <div className="flex items-center space-x-2">
                                                     <Checkbox id="hockey-mobile" />
-                                                    <label htmlFor="hockey-mobile" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-gray-600">
+                                                    <label htmlFor="hockey-mobile" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-subtitle">
                                                         Hockey
                                                     </label>
                                                 </div>
@@ -128,23 +134,23 @@ const ShopPage = () => {
                                     {/* Availability Filter */}
                                     <Accordion type="single" collapsible defaultValue="availability">
                                         <AccordionItem value="availability" className="border-b border-gray-200">
-                                            <AccordionTrigger className="text-lg font-medium text-gray-700 hover:no-underline">Availability</AccordionTrigger>
+                                            <AccordionTrigger className="text-lg font-medium text-subtitle hover:no-underline">Availability</AccordionTrigger>
                                             <AccordionContent className="pt-2 pb-4 space-y-3">
                                                 <div className="flex items-center space-x-2">
                                                     <Checkbox id="inStock-mobile" />
-                                                    <label htmlFor="inStock-mobile" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-gray-600">
+                                                    <label htmlFor="inStock-mobile" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-subtitle">
                                                         In Stock
                                                     </label>
                                                 </div>
                                                 <div className="flex items-center space-x-2">
                                                     <Checkbox id="outOfStock-mobile" />
-                                                    <label htmlFor="outOfStock-mobile" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-gray-600">
+                                                    <label htmlFor="outOfStock-mobile" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-subtitle">
                                                         Out of Stock
                                                     </label>
                                                 </div>
                                                 <div className="flex items-center space-x-2">
                                                     <Checkbox id="upComing-mobile" />
-                                                    <label htmlFor="upComing-mobile" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-gray-600">
+                                                    <label htmlFor="upComing-mobile" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-subtitle">
                                                         Up Coming
                                                     </label>
                                                 </div>
@@ -155,7 +161,7 @@ const ShopPage = () => {
                                     {/* Price Range Filter */}
                                     <Accordion type="single" collapsible defaultValue="price-range">
                                         <AccordionItem value="price-range" className="border-b border-gray-200">
-                                            <AccordionTrigger className="text-lg font-medium text-gray-700 hover:no-underline">Price Range</AccordionTrigger>
+                                            <AccordionTrigger className="text-lg font-medium text-subtitle hover:no-underline">Price Range</AccordionTrigger>
                                             <AccordionContent className="pt-2 pb-4 space-y-4">
                                                 {/* Price Slider */}
                                                 <Slider
@@ -188,7 +194,7 @@ const ShopPage = () => {
 
                                     {/* Rating Filter */}
                                     <div className="py-4">
-                                        <h4 className="text-lg font-medium text-gray-700 mb-3">Rating</h4>
+                                        <h4 className="text-lg font-medium text-subtitle mb-3">Rating</h4>
                                         <div className="flex space-x-1">
                                             {[1, 2, 3, 4, 5].map((starNum) => (
                                                 <Star
@@ -239,31 +245,31 @@ const ShopPage = () => {
                                     <AccordionContent className="pt-2 pb-4 space-y-3">
                                         <div className="flex items-center space-x-2">
                                             <Checkbox id="pokemon" />
-                                            <label htmlFor="pokemon" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-gray-600">
+                                            <label htmlFor="pokemon" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-subtitle">
                                                 Pokémon
                                             </label>
                                         </div>
                                         <div className="flex items-center space-x-2">
                                             <Checkbox id="basketball" />
-                                            <label htmlFor="basketball" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-gray-600">
+                                            <label htmlFor="basketball" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-subtitle">
                                                 Basketball
                                             </label>
                                         </div>
                                         <div className="flex items-center space-x-2">
                                             <Checkbox id="football" />
-                                            <label htmlFor="football" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-gray-600">
+                                            <label htmlFor="football" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-subtitle">
                                                 Football
                                             </label>
                                         </div>
                                         <div className="flex items-center space-x-2">
                                             <Checkbox id="baseball" />
-                                            <label htmlFor="baseball" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-gray-600">
+                                            <label htmlFor="baseball" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-subtitle">
                                                 Baseball
                                             </label>
                                         </div>
                                         <div className="flex items-center space-x-2">
                                             <Checkbox id="hockey" />
-                                            <label htmlFor="hockey" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-gray-600">
+                                            <label htmlFor="hockey" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-subtitle">
                                                 Hockey
                                             </label>
                                         </div>
@@ -278,19 +284,19 @@ const ShopPage = () => {
                                     <AccordionContent className="pt-2 pb-4 space-y-3">
                                         <div className="flex items-center space-x-2">
                                             <Checkbox id="inStock" />
-                                            <label htmlFor="inStock" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-gray-600">
+                                            <label htmlFor="inStock" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-subtitle">
                                                 In Stock
                                             </label>
                                         </div>
                                         <div className="flex items-center space-x-2">
                                             <Checkbox id="outOfStock" />
-                                            <label htmlFor="outOfStock" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-gray-600">
+                                            <label htmlFor="outOfStock" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-subtitle">
                                                 Out of Stock
                                             </label>
                                         </div>
                                         <div className="flex items-center space-x-2">
                                             <Checkbox id="upComing" />
-                                            <label htmlFor="upComing" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-gray-600">
+                                            <label htmlFor="upComing" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-subtitle">
                                                 Up Coming
                                             </label>
                                         </div>
@@ -359,7 +365,7 @@ const ShopPage = () => {
                                     <div className="overflow-hidden relative">
                                         {/* Product Image */}
                                         <Link href={`/shop/details?id=${product.id}`}>
-                                            <div className="relative w-full aspect-[5/6] bg-gray-100 flex items-center justify-center overflow-hidden">
+                                            <div className="relative w-full aspect-[5/6] flex items-center justify-center overflow-hidden">
                                                 <Image
                                                     src={product.image}
                                                     alt={product.title}
@@ -377,7 +383,7 @@ const ShopPage = () => {
                                         </div>
 
                                         <div className="mt-4 px-2">
-                                            <h3 className="text-sm font-medium text-gray-900 line-clamp-1 mb-1">{product.title}</h3>
+                                            <h3 className="text-sm font-medium text-title line-clamp-1 mb-1">{product.title}</h3>
                                             <div className="flex justify-between items-center">
                                                 <div className="flex items-baseline space-x-2 mb-2">
                                                     <span className="text-lg font-semibold text-title">{product.currency}{product.price}</span>

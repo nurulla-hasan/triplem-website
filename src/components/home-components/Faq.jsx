@@ -24,15 +24,15 @@ const Faq = () => {
                             <AccordionItem
                                 key={item.id}
                                 value={item.id}
-                                className="bg-white rounded-sm border border-gray-200 data-[state=open]:border-primary mb-4 py-4"
+                                className="rounded-sm border border-gray-200 data-[state=open]:border-primary mb-4 py-4"
                             >
                                 <AccordionTrigger
-                                    className="px-6 py-4 text-lg font-medium text-gray-800 hover:no-underline flex justify-between items-center w-full rounded-sm transition-colors duration-200
+                                    className="px-6 py-4 text-lg font-medium text-title hover:no-underline flex justify-between items-center w-full rounded-sm transition-colors duration-200
                                     data-[state=open]:rounded-b-none"
                                 >
                                     <span className="text-left flex-grow">{item.question}</span>
                                 </AccordionTrigger>
-                                <AccordionContent className="px-6 pb-6 pt-0 text-gray-600">
+                                <AccordionContent className="px-6 pb-6 pt-0 text-subtitle">
                                     {item.answer}
                                 </AccordionContent>
                             </AccordionItem>

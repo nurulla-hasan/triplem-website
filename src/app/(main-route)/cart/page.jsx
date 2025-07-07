@@ -63,9 +63,9 @@ const CartPage = () => {
                 <div className="container mx-auto py-8">
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                         {/* Product List */}
-                        <div className="lg:col-span-2 bg-white p-4 md:p-6">
+                        <div className="lg:col-span-2 p-4 md:p-6">
                             {/* Table Header */}
-                            <div className="hidden md:grid grid-cols-12 text-sm font-medium text-gray-500 pb-4 border-b">
+                            <div className="hidden md:grid grid-cols-12 text-sm font-medium text-subtitle pb-4 border-b">
                                 <span className="col-span-1"></span>
                                 <span className="col-span-5">Product</span>
                                 <span className="col-span-2 text-center">Quantity</span>
@@ -75,7 +75,7 @@ const CartPage = () => {
 
                             {/* Product Items */}
                             {cartItems.length === 0 ? (
-                                <div className="text-center py-10 text-gray-500">Your cart is empty.</div>
+                                <div className="text-center py-10 text-subtitle">Your cart is empty.</div>
                             ) : (
                                 cartItems.map((item, index) => (
                                     <React.Fragment key={item.id}>
@@ -99,10 +99,10 @@ const CartPage = () => {
                                                     />
                                                 </div>
                                                 <div className="flex flex-col">
-                                                    <Link href={`/product/${item.id}`} className="font-medium text-gray-800 hover:text-primary transition-colors">
+                                                    <Link href={`/product/${item.id}`} className="font-medium text-title hover:text-primary transition-colors">
                                                         {item.name}
                                                     </Link>
-                                                    <span className="text-sm text-gray-500">${item.price.toFixed(2)}</span>
+                                                    <span className="text-sm text-subtitle">${item.price.toFixed(2)}</span>
                                                 </div>
                                             </div>
                                             <div className="col-span-2 flex justify-center">
@@ -113,7 +113,7 @@ const CartPage = () => {
                                                         className="w-8 h-8 rounded-none border-0 border-r"
                                                         onClick={() => handleQuantityChange(item.id, "decrement")}
                                                     >
-                                                        <Minus className="size-4 text-gray-600" />
+                                                        <Minus className="size-4 text-subtitle" />
                                                     </Button>
                                                     <span className="px-4 text-base font-medium">{item.quantity}</span>
                                                     <Button
@@ -122,12 +122,12 @@ const CartPage = () => {
                                                         className="w-8 h-8 rounded-none border-0 border-l"
                                                         onClick={() => handleQuantityChange(item.id, "increment")}
                                                     >
-                                                        <Plus className="size-4 text-gray-600" />
+                                                        <Plus className="size-4 text-subtitle" />
                                                     </Button>
                                                 </div>
                                             </div>
                                             <div className="col-span-3 text-right">
-                                                <span className="text-lg font-semibold text-gray-800">
+                                                <span className="text-lg font-semibold text-title">
                                                     ${(item.price * item.quantity).toFixed(2)}
                                                 </span>
                                             </div>
@@ -135,7 +135,7 @@ const CartPage = () => {
                                                 <Button
                                                     variant="ghost"
                                                     size="icon"
-                                                    className="text-gray-400 hover:text-red-500 transition-colors"
+                                                    className="text-subtitle/70 hover:text-red-500 transition-colors"
                                                     onClick={() => handleRemoveItem(item.id)}
                                                 >
                                                     <Trash2 className="size-5" />
@@ -161,11 +161,11 @@ const CartPage = () => {
                                                     />
                                                 </div>
                                                 <div className="flex flex-col flex-grow">
-                                                    <Link href={`/product/${item.id}`} className="font-medium text-gray-800 hover:text-primary transition-colors mb-1">
+                                                    <Link href={`/product/${item.id}`} className="font-medium text-title hover:text-primary transition-colors mb-1">
                                                         {item.name}
                                                     </Link>
-                                                    <span className="text-sm text-gray-500">Price: ${item.price.toFixed(2)}</span>
-                                                    <span className="text-md font-semibold text-gray-800 mt-1">
+                                                    <span className="text-sm text-subtitle">Price: ${item.price.toFixed(2)}</span>
+                                                    <span className="text-md font-semibold text-title mt-1">
                                                         Total: ${(item.price * item.quantity).toFixed(2)}
                                                     </span>
                                                 </div>
@@ -178,7 +178,7 @@ const CartPage = () => {
                                                         className="w-8 h-8 rounded-none border-0 border-r"
                                                         onClick={() => handleQuantityChange(item.id, "decrement")}
                                                     >
-                                                        <Minus className="size-4 text-gray-600" />
+                                                        <Minus className="size-4 text-subtitle" />
                                                     </Button>
                                                     <span className="px-4 text-base font-medium">{item.quantity}</span>
                                                     <Button
@@ -187,13 +187,13 @@ const CartPage = () => {
                                                         className="w-8 h-8 rounded-none border-0 border-l"
                                                         onClick={() => handleQuantityChange(item.id, "increment")}
                                                     >
-                                                        <Plus className="size-4 text-gray-600" />
+                                                        <Plus className="size-4 text-subtitle" />
                                                     </Button>
                                                 </div>
                                                 <Button
                                                     variant="ghost"
                                                     size="icon"
-                                                    className="text-gray-400 hover:text-red-500 transition-colors"
+                                                    className="text-subtitle/70 hover:text-red-500 transition-colors"
                                                     onClick={() => handleRemoveItem(item.id)}
                                                 >
                                                     <Trash2 className="size-5" />
@@ -208,21 +208,21 @@ const CartPage = () => {
                         </div>
 
                         {/* Order Overview */}
-                        <div className="lg:col-span-1 bg-white p-6 rounded-lg border">
+                        <div className="lg:col-span-1 p-6 rounded-lg border">
                             <h2 className="text-xl font-medium text-title mb-4">Order Overview</h2>
                             <div className="space-y-3">
-                                <div className="flex justify-between items-center text-gray-700">
+                                <div className="flex justify-between items-center text-subtitle">
                                     <span>Total Items:</span>
                                     <span className="font-semibold">{totalItems}</span>
                                 </div>
-                                <div className="flex justify-between items-center text-gray-700">
+                                <div className="flex justify-between items-center text-subtitle">
                                     <span>Sub Total:</span>
                                     <span className="font-semibold">${subTotal.toFixed(2)}</span>
                                 </div>
                             </div>
                             <Separator className="my-6" />
                             <Link href="/cart/checkout" className="w-full">
-                                <Button className="w-full font-medium py-3 rounded-md">
+                                <Button className="w-full font-medium py-3">
                                     Check out
                                 </Button>
                             </Link>

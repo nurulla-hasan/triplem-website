@@ -31,7 +31,7 @@ const ContactPage = () => {
 
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                             {/* Location */}
-                            <div className="flex items-start bg-white p-4 rounded-lg shadow-sm">
+                            <div className="flex items-start p-4 rounded-lg shadow-sm">
                                 <MapPin className="w-6 h-6 mr-3 text-primary mt-1" />
                                 <div>
                                     <p className="text-sm font-medium text-title">Location:</p>
@@ -40,7 +40,7 @@ const ContactPage = () => {
                             </div>
 
                             {/* Email */}
-                            <div className="flex items-start bg-white p-4 rounded-lg shadow-sm">
+                            <div className="flex items-start p-4 rounded-lg shadow-sm">
                                 <Mail className="w-6 h-6 mr-3 text-primary mt-1" />
                                 <div>
                                     <p className="text-sm font-medium text-title">Email:</p>
@@ -49,7 +49,7 @@ const ContactPage = () => {
                             </div>
 
                             {/* Phone */}
-                            <div className="flex items-start bg-white p-4 rounded-lg shadow-sm">
+                            <div className="flex items-start p-4 rounded-lg shadow-sm">
                                 <Phone className="w-6 h-6 mr-3 text-primary mt-1" />
                                 <div>
                                     <p className="text-sm font-medium text-title">Phone:</p>

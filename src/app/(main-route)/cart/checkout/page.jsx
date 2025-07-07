@@ -58,11 +58,11 @@ const CheckOutPage = () => {
         <div className="container mx-auto py-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Order Details */}
-            <div className="bg-white p-6 rounded-lg border h-fit">
+            <div className="p-6 rounded-lg border h-fit">
               <h2 className="text-2xl font-medium text-title mb-6">Order Details</h2>
 
               {/* Order Items Header */}
-              <div className="grid grid-cols-2 text-sm font-medium text-gray-500 pb-4 border-b">
+              <div className="grid grid-cols-2 text-sm font-medium text-subtitle pb-4 border-b">
                 <span>Product</span>
                 <span className="text-right">Total</span>
               </div>
@@ -82,13 +82,13 @@ const CheckOutPage = () => {
                         />
                       </div>
                       <div className="flex flex-col">
-                        <span className="font-medium text-gray-800">
+                        <span className="font-medium text-title">
                           {item.name}
                         </span>
-                        <span className="text-sm text-gray-500">Qty: {item.quantity}</span>
+                        <span className="text-sm text-subtitle">Qty: {item.quantity}</span>
                       </div>
                     </div>
-                    <span className="text-base font-semibold text-gray-800">
+                    <span className="text-base font-semibold text-title">
                       ${(item.price * item.quantity).toFixed(2)}
                     </span>
                   </div>
@@ -99,7 +99,7 @@ const CheckOutPage = () => {
               <Separator className="my-6" />
 
               {/* Totals */}
-              <div className="space-y-3 text-gray-700">
+              <div className="space-y-3 text-subtitle">
                 <div className="flex justify-between items-center">
                   <span>Sub Total:</span>
                   <span className="font-semibold">${subTotal.toFixed(2)}</span>
@@ -110,14 +110,14 @@ const CheckOutPage = () => {
                 </div>
               </div>
               <Separator className="my-6" />
-              <div className="flex justify-between items-center text-lg font-bold text-gray-800">
+              <div className="flex justify-between items-center text-lg font-bold text-title">
                 <span>Total:</span>
                 <span>${total.toFixed(2)}</span>
               </div>
             </div>
 
             {/* Shipping Address & Payment Options */}
-            <div className="bg-white p-6 rounded-lg border h-fit">
+            <div className="p-6 rounded-lg border h-fit">
               <h2 className="text-2xl font-medium text-title mb-6">Shipping Address</h2>
               <div className="space-y-4 mb-8">
                 <div className="grid grid-cols-1 gap-2">
@@ -189,7 +189,7 @@ const CheckOutPage = () => {
                     <RadioGroupItem value="stripe" id="stripe" />
                     {/* <span className="text-lg font-medium">Stripe</span> */}
                   </div>
-                  <Image src="/images/stripe.png" alt="Stripe" width={80} height={80} className="object-contain border px-3 rounded" />
+                  <Image src="/images/stripe.png" alt="Stripe" width={80} height={80} className="object-contain px-3 rounded" />
                 </Label>
 
                 <Label
@@ -202,7 +202,7 @@ const CheckOutPage = () => {
                     <RadioGroupItem value="paypal" id="paypal" />
                     {/* <span className="text-lg font-medium">PayPal</span> */}
                   </div>
-                  <Image src="/images/paypal.png" alt="PayPal" width={80} height={80} className="object-contain border px-3 rounded" />
+                  <Image src="/images/paypal.png" alt="PayPal" width={80} height={80} className="object-contain px-3 rounded" />
                 </Label>
               </RadioGroup>
 

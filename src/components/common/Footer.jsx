@@ -101,15 +101,15 @@ const Footer = () => {
                             </h4>
                             <address className="not-italic space-y-3 text-gray-300 text-sm">
                                 <div className="flex items-start gap-3">
-                                    <MapPin className="h-5 w-5 text-gray-500 shrink-0 mt-1" />
+                                    <MapPin className="h-5 w-5 text-subtitle shrink-0 mt-1" />
                                     <span>4517 Washington Ave. Manchester,<br />Kentucky 39495</span>
                                 </div>
                                 <div className="flex items-center gap-3">
-                                    <Phone className="h-5 w-5 text-gray-500 shrink-0" />
+                                    <Phone className="h-5 w-5 text-subtitle shrink-0" />
                                     <span>(307) 555-0133</span>
                                 </div>
                                 <div className="flex items-center gap-3">
-                                    <Mail className="h-5 w-5 text-gray-500 shrink-0" />
+                                    <Mail className="h-5 w-5 text-subtitle shrink-0" />
                                     <span>debra.holt@example.com</span>
                                 </div>
                             </address>

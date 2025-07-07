@@ -15,6 +15,7 @@ import StarRating from "@/components/shop/details/StarRating";
 import { productDetailsDataMap } from "@/data/data";
 import { Separator } from "@/components/ui/separator";
 import SimilarProducts from "@/components/shop/details/SimilarProducts";
+import Link from "next/link";
 
 const DetailsPage = () => {
     const product = productDetailsDataMap["1"];
@@ -94,21 +95,21 @@ const DetailsPage = () => {
                     <div className="space-y-4">
                         {/* Price and Title */}
                         <div className="flex flex-col gap-2">
-                                {product.discount && (
-                                    <Badge variant="outline" className="rounded-full text-sm font-medium text-green-600 border-green-600 px-2 py-1">
-                                        {product.discount}
-                                    </Badge>
-                                )}
+                            {product.discount && (
+                                <Badge variant="outline" className="rounded-full text-sm font-medium text-green-600 border-green-600 px-2 py-1">
+                                    {product.discount}
+                                </Badge>
+                            )}
                             <h1 className="text-2xl md:text-3xl font-bold text-title">{product.name}</h1>
                             <div className="flex items-center gap-3 mt-1">
-                                <span className={`px-2 py-1 text-sm ${product.inStock? "text-primary bg-primary/8" : "text-red-500 bg-red-50"} rounded`}>{product.inStock? "In Stock" : "Out of Stock"}</span>
-                                <StarRating rating={product.rating} starClassName="size-4"/>
-                                <span className="text-sm text-gray-600">({product.numberOfReviews} Reviews)</span>
+                                <span className={`px-2 py-1 text-sm ${product.inStock ? "text-primary bg-primary/8" : "text-red-500 bg-red-50"} rounded`}>{product.inStock ? "In Stock" : "Out of Stock"}</span>
+                                <StarRating rating={product.rating} starClassName="size-4" />
+                                <span className="text-sm text-subtitle">({product.numberOfReviews} Reviews)</span>
                             </div>
                             <div className="flex items-center gap-3">
-                                <span className="text-xl md:text-2xl font-bold text-gray-900">${product.price.toFixed(2)}</span>
+                                <span className="text-xl md:text-2xl font-bold text-title">${product.price.toFixed(2)}</span>
                                 {product.oldPrice && (
-                                    <span className="text-base text-gray-500 line-through">${product.oldPrice.toFixed(2)}</span>
+                                    <span className="text-base text-subtitle line-through">${product.oldPrice.toFixed(2)}</span>
                                 )}
                             </div>
                         </div>
@@ -116,7 +117,7 @@ const DetailsPage = () => {
                         <Separator />
 
                         {/* Short Description */}
-                        <p className="text-gray-700 leading-relaxed text-base">{product.shortDescription}</p>
+                        <p className="text-subtitle leading-relaxed text-base">{product.shortDescription}</p>
 
                         <Separator />
 
@@ -174,7 +175,7 @@ const DetailsPage = () => {
                                     <Minus className="size-4" />
                                 </Button>
                                 <span className="px-4 text-lg font-medium">{quantity}</span>
-                                <Button variant="outline"  className={cn("border-0 border-l rounded-none")} size="icon" onClick={() => handleQuantityChange("increment")}>
+                                <Button variant="outline" className={cn("border-0 border-l rounded-none")} size="icon" onClick={() => handleQuantityChange("increment")}>
                                     <Plus className="size-4" />
                                 </Button>
                             </div>
@@ -191,12 +192,12 @@ const DetailsPage = () => {
                         <div className="mt-8">
                             {product.descriptionTabs && product.descriptionTabs.length > 0 && (
                                 <Tabs defaultValue={product.descriptionTabs[0].title.toLowerCase()} className="w-full">
-                                    <TabsList className="grid w-full grid-cols-2 lg:grid-cols-5 gap-8 h-auto p-0 bg-white">
+                                    <TabsList className="grid w-full grid-cols-2 lg:grid-cols-5 gap-8 h-auto p-2 bg-content">
                                         {product.descriptionTabs.map((tab, index) => (
                                             <TabsTrigger
                                                 key={index}
                                                 value={tab.title ? tab.title.toLowerCase() : `reviews-${tab.reviews ? tab.reviews : ''}`}
-                                                className="border-0 shadow-none px-6 text-base font-medium data-[state=active]:border-b-3 data-[state=active]:border-primary data-[state=active]:shadow-none data-[state=active]:text-primary rounded-none"
+                                                className="border-0 data-[state=active]:border-b-2 data-[state=active]:border-b-primary dark:data-[state=active]:border-b-primary rounded-none"
                                             >
                                                 {tab.title === "Description" ? "Description" : `Reviews (${tab.reviews || 0})`}
                                             </TabsTrigger>
@@ -207,15 +208,15 @@ const DetailsPage = () => {
                                         <TabsContent
                                             key={index}
                                             value={tab.title ? tab.title.toLowerCase() : `reviews-${tab.reviews ? tab.reviews : ''}`}
-                                            className="mt-4 bg-white rounded-lg"
+                                            className="mt-4 rounded-lg"
                                         >
                                             {tab.title === "Description" && (
                                                 <div className="space-y-4">
-                                                    <p className="text-gray-700 leading-relaxed text-base">{tab.content}</p>
+                                                    <p className="text-subtitle leading-relaxed text-base">{tab.content}</p>
                                                     {product.productHighlights && product.productHighlights.length > 0 && (
                                                         <div className="mt-6">
-                                                            <h4 className="text-lg font-semibold text-gray-800 mb-3">Product Highlights:</h4>
-                                                            <ul className="list-disc list-inside text-gray-700 space-y-2">
+                                                            <h4 className="text-lg font-semibold text-title mb-3">Product Highlights:</h4>
+                                                            <ul className="list-disc list-inside text-subtitle space-y-2">
                                                                 {product.productHighlights.map((highlight, hIndex) => (
                                                                     <li key={hIndex}>{highlight}</li>
                                                                 ))}
@@ -224,8 +225,8 @@ const DetailsPage = () => {
                                                     )}
                                                     {product.sizingAndFit && product.sizingAndFit.length > 0 && (
                                                         <div className="mt-6">
-                                                            <h4 className="text-lg font-semibold text-gray-800 mb-3">Sizing & Fit:</h4>
-                                                            <ul className="list-disc list-inside text-gray-700 space-y-2">
+                                                            <h4 className="text-lg font-semibold text-title mb-3">Sizing & Fit:</h4>
+                                                            <ul className="list-disc list-inside text-subtitle space-y-2">
                                                                 {product.sizingAndFit.map((item, sIndex) => (
                                                                     <li key={sIndex}>{item}</li>
                                                                 ))}
@@ -251,7 +252,7 @@ const DetailsPage = () => {
                                                         <div className="space-y-4">
                                                             {/* Only show the first 4 reviews */}
                                                             {tab.content && tab.content.slice(0, 4).map((review) => (
-                                                                <div key={review.id} className="flex flex-col gap-3 p-4 border rounded-lg bg-gray-50">
+                                                                <div key={review.id} className="flex flex-col gap-3 p-4 border rounded-lg">
                                                                     <div className="flex justify-between items-center">
                                                                         <div className="flex items-center gap-3">
                                                                             <Avatar className="size-10">
@@ -259,25 +260,27 @@ const DetailsPage = () => {
                                                                                 <AvatarFallback>{review.author.charAt(0)}</AvatarFallback>
                                                                             </Avatar>
                                                                             <div>
-                                                                                <p className="font-semibold text-gray-900">{review.author}</p>
-                                                                                <p className="text-sm text-gray-600">
+                                                                                <p className="font-semibold text-title">{review.author}</p>
+                                                                                <p className="text-sm text-subtitle">
                                                                                     {review.date} {review.location && ` | ${review.location}`}
                                                                                 </p>
                                                                             </div>
                                                                         </div>
                                                                         <StarRating rating={review.rating} starClassName="size-4" />
                                                                     </div>
-                                                                    <p className="text-gray-700 leading-relaxed">{review.comment}</p>
+                                                                    <p className="text-subtitle leading-relaxed">{review.comment}</p>
                                                                 </div>
                                                             ))}
                                                         </div>
                                                     </ScrollArea>
                                                     {/* Show "Show More Reviews" button only if there are more than 4 reviews */}
                                                     {tab.content && tab.content.length > 4 && (
-                                                        <Button variant="ghost" className="">
-                                                            Show More Reviews
-                                                            <ChevronRight className="size-4 ml-2" />
-                                                        </Button>
+                                                        <Link href={`/shop/reviews`}>
+                                                            <Button variant="ghost">
+                                                                Show More Reviews
+                                                                <ChevronRight className="size-4 ml-2" />
+                                                            </Button>
+                                                        </Link>
                                                     )}
                                                 </div>
                                             )}

@@ -201,7 +201,7 @@ const ProfilePage = () => {
                                         className="h-10 text-base rounded-xs pr-10"
                                     />
                                     <span
-                                        className="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer text-gray-400"
+                                        className="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer text-subtitle/70"
                                         onClick={() => setShowPassword(!showPassword)}
                                     >
                                         {showPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
@@ -222,7 +222,7 @@ const ProfilePage = () => {
                                         className="h-10 text-base rounded-xs pr-10"
                                     />
                                     <span
-                                        className="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer text-gray-400"
+                                        className="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer text-subtitle/70"
                                         onClick={() => setShowPassword(!showPassword)}
                                     >
                                         {showPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
@@ -243,7 +243,7 @@ const ProfilePage = () => {
                                         className="h-10 text-base rounded-xs pr-10"
                                     />
                                     <span
-                                        className="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer text-gray-400"
+                                        className="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer text-subtitle/70"
                                         onClick={() => setShowPassword(!showPassword)}
                                     >
                                         {showPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}

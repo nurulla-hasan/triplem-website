@@ -4,13 +4,17 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
-import { Search, Heart, User, ShoppingBag, Menu, LogOut, UserPlus, ChevronDown, ChevronUp, X, ListOrdered, ShoppingBasket } from "lucide-react";
+import { Search, Heart, User, ShoppingBag, Menu, LogOut, UserPlus, ChevronDown, X, ShoppingBasket } from "lucide-react";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
+import { useTheme } from "next-themes";
+import * as React from "react"
+import { Moon, Sun } from "lucide-react"
 
 
 const Navbar = () => {
+    const { setTheme } = useTheme()
     const [isLoggedIn, setIsLoggedIn] = useState(true);
     const [userName, setUserName] = useState("John Doe");
     const [showSearchInput, setShowSearchInput] = useState(false);
@@ -26,14 +30,14 @@ const Navbar = () => {
 
     return (
         <div className="h-[81px]">
-            <nav className="bg-white border-b border-gray-100 fixed top-0 left-0 right-0 z-50">
+            <nav className="bg-content-bg  fixed top-0 left-0 right-0 z-50">
                 <div className="max-w-7xl mx-auto px-4 xl:px-0 py-2">
                     <div className="flex items-center justify-between h-16">
                         <div className="lg:hidden flex items-center">
                             <Sheet>
                                 <SheetTrigger asChild>
-                                    <Button variant="ghost" size="icon" className="hover:bg-gray-100">
-                                        <Menu className="h-6 w-6 text-gray-600" />
+                                    <Button variant="ghost" size="icon" className="">
+                                        <Menu className="h-6 w-6 text-subtitle" />
                                         <span className="sr-only">Toggle navigation menu</span>
                                     </Button>
                                 </SheetTrigger>
@@ -66,7 +70,7 @@ const Navbar = () => {
                                             <Link
                                                 key={link.name}
                                                 href={link.href}
-                                                className={`font-medium text-gray-700 hover:text-gray-900 transition-colors ${pathname === link.href ? "underline font-bold" : ""
+                                                className={`font-medium text-subtitle hover:text-title transition-colors ${pathname === link.href ? "underline font-bold" : ""
                                                     }`}
                                             >
                                                 {link.name}
@@ -98,7 +102,7 @@ const Navbar = () => {
                                 <Link
                                     key={link.name}
                                     href={link.href}
-                                    className={`text-gray-600 hover:text-gray-900 transition-colors font-medium duration-200 text-sm ${pathname === link.href ? "text-gray-900 underline font-bold" : ""}`}
+                                    className={`text-subtitle hover:text-title transition-colors font-medium duration-200 text-sm ${pathname === link.href ? "text-title underline font-bold" : ""}`}
                                 >
                                     {link.name}
                                 </Link>
@@ -116,7 +120,7 @@ const Navbar = () => {
                                             placeholder="Search..."
                                             className="w-48 pl-8 transition-all duration-300 ease-in-out"
                                         />
-                                        <Search size={16} className="absolute left-2 text-gray-500" />
+                                        <Search size={16} className="absolute left-2 text-subtitle" />
                                         <button
                                             className="absolute right-0 p-2 cursor-pointer"
                                             onClick={() => setShowSearchInput(false)}
@@ -125,19 +129,17 @@ const Navbar = () => {
                                         </button>
                                     </div>
                                 ) : (
-                                    <Button variant="ghost" size="icon" className="hover:bg-gray-100" onClick={() => setShowSearchInput(true)}>
-                                        <Search className="h-5 w-5 text-gray-600" />
+                                    <Button variant="ghost" size="icon" className="" onClick={() => setShowSearchInput(true)}>
+                                        <Search className="h-5 w-5 text-subtitle" />
                                         <span className="sr-only">Search</span>
                                     </Button>
                                 )}
                             </div>
 
-
-
                             {/* Heart/Favorites Icon */}
                             <Link href="/wishlist">
-                                <Button variant="ghost" size="icon" className="hover:bg-gray-100">
-                                    <Heart className="h-5 w-5 text-gray-600" />
+                                <Button variant="ghost" size="icon" className="">
+                                    <Heart className="h-5 w-5 text-subtitle" />
                                     <span className="sr-only">Favorites</span>
                                 </Button>
                             </Link>
@@ -146,14 +148,14 @@ const Navbar = () => {
                             <DropdownMenu>
                                 <DropdownMenuTrigger asChild>
                                     <div className="flex items-center cursor-pointer">
-                                        <Button variant="ghost" size="icon" className="hover:bg-gray-100">
-                                            <User className="h-5 w-5 text-gray-600" />
+                                        <Button variant="ghost" size="icon" className="">
+                                            <User className="h-5 w-5 text-subtitle" />
                                             <span className="sr-only">Profile</span>
                                         </Button>
                                         {isLoggedIn && (
                                             <div className="flex items-center gap-1">
                                                 <span className="hidden md:block text-subtitle text-sm font-medium">{userName}</span>
-                                                <ChevronDown className="hidden md:block h-4 w-4 text-gray-600" />
+                                                <ChevronDown className="hidden md:block h-4 w-4 text-subtitle" />
                                             </div>
                                         )}
                                     </div>
@@ -196,13 +198,35 @@ const Navbar = () => {
 
                             {/* Shopping Cart Icon */}
                             <Link href="/cart">
-                                <Button variant="ghost" size="icon" className="hover:bg-gray-100 relative">
-                                    <ShoppingBag className="h-5 w-5 text-gray-600" />
+                                <Button variant="ghost" size="icon" className="relative">
+                                    <ShoppingBag className="h-5 w-5 text-subtitle" />
                                     <span className="sr-only">Shopping Cart</span>
                                     {/* Optional cart count badge */}
-                                    <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-4 w-4 flex items-center justify-center">3</span>
+                                    {/* <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-4 w-4 flex items-center justify-center">3</span> */}
                                 </Button>
                             </Link>
+
+                            {/* Dark/Light Mode Toggle */}
+                            <DropdownMenu>
+                                <DropdownMenuTrigger asChild>
+                                    <Button variant="ghost" size="icon">
+                                        <Sun className="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
+                                        <Moon className="absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
+                                        <span className="sr-only">Toggle theme</span>
+                                    </Button>
+                                </DropdownMenuTrigger>
+                                <DropdownMenuContent align="end">
+                                    <DropdownMenuItem onClick={() => setTheme("light")}>
+                                        Light
+                                    </DropdownMenuItem>
+                                    <DropdownMenuItem onClick={() => setTheme("dark")}>
+                                        Dark
+                                    </DropdownMenuItem>
+                                    <DropdownMenuItem onClick={() => setTheme("system")}>
+                                        System
+                                    </DropdownMenuItem>
+                                </DropdownMenuContent>
+                            </DropdownMenu>
                         </div>
                     </div>
                 </div>

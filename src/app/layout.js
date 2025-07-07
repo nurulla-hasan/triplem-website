@@ -2,6 +2,7 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import NextTopLoader from "nextjs-toploader";
 import { Poltawski_Nowy } from "next/font/google";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const poltawski = Poltawski_Nowy({
   variable: "--font-poltawski",
@@ -22,16 +23,24 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`
           ${poppins.variable}
           ${poltawski.variable}
           antialiased container mx-auto max-w-[1920px]
         `}
+
       >
         <NextTopLoader color="#E4AF00" height={2} showSpinner={false} />
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -100,7 +100,7 @@ const Testimonials = () => {
                                             height={60}
                                         />
                                         <div className='col-span-4'>
-                                            <p className="text-gray-700 text-sm sm:text-lg leading-relaxed">
+                                            <p className="text-subtitle text-sm sm:text-lg leading-relaxed">
                                                 {testimonial.text}
                                             </p>
                                         </div>

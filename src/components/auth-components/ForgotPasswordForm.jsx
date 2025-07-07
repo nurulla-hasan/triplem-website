@@ -7,12 +7,14 @@ import { Label } from "@/components/ui/label";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
+import { useRouter } from "next/navigation";
 
 const forgotPasswordSchema = z.object({
   email: z.string().email({ message: "Invalid email address." }),
 });
 
 export function ForgotPasswordForm({ className, ...props }) {
+  const router = useRouter()
   const {
     register,
     handleSubmit,
@@ -23,7 +25,7 @@ export function ForgotPasswordForm({ className, ...props }) {
 
   const onSubmit = (data) => {
     console.log(data);
-    // Handle forgot password logic here
+    router.push("/auth/verification")
   };
 
   return (
@@ -33,8 +35,8 @@ export function ForgotPasswordForm({ className, ...props }) {
           <form onSubmit={handleSubmit(onSubmit)} className="p-6 md:p-8">
             <div className="flex flex-col gap-6">
               <div className="flex flex-col items-center text-center">
-                <h1 className="text-2xl font-bold">Forgot Your Password?</h1>
-                <p className="text-sm text-gray-500">Enter your email to reset your password.</p>
+                <h1 className="text-2xl font-semibold text-title mb-2">Forgot Your Password?</h1>
+                <p className="text-sm text-subtitle">Enter your email to reset your password.</p>
               </div>
 
               <div className="grid gap-3">
@@ -51,7 +53,7 @@ export function ForgotPasswordForm({ className, ...props }) {
               </div>
 
               <Button type="submit" className="w-full">
-                Send Reset Link
+                Get Code
               </Button>
             </div>
           </form>

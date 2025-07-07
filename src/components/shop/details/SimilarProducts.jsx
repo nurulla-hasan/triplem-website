@@ -15,8 +15,7 @@ const SimilarProducts = () => {
   }
 
   return (
-    <div>
-      <PageLayout>
+    <div className="mt-12 max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="mb-8">
           <h2 className="text-2xl sm:text-4xl font-medium text-title tracking-tight">
@@ -80,7 +79,6 @@ const SimilarProducts = () => {
           <CarouselPrevious className="hidden sm:flex" />
           <CarouselNext className="hidden sm:flex" />
         </Carousel>
-      </PageLayout>
     </div>
   );
 };

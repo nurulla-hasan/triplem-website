@@ -47,7 +47,7 @@ const DetailsPage = () => {
                     <CustomBreadcrumb links={breadcrumbLinks} />
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 md:items-start gap-8 mb-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 md:items-start gap-8 pb-12">
                     {/* Product Image Gallery */}
                     <div className="grid grid-cols-2 gap-4">
                         {product.images && product.images.length > 0 && (

@@ -11,7 +11,7 @@ const Collecting = () => {
           {/* Images section */}
           <div className="relative w-full h-[400px] md:h-[450px]">
             {/* Left image */}
-            <div className="absolute md:-top-10 left-0 md:w-[340px] w-[240px] h-[240px] md:h-[340px] rounded-3xl overflow-hidden shadow-md z-10">
+            <div className="absolute md:left-10 top-0 md:w-[340px] w-[240px] h-[240px] md:h-[340px] rounded-3xl overflow-hidden shadow-md z-10">
               <Image
                 src="/images/offer1.jpg"
                 alt="Working on laptop"

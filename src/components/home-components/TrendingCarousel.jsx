@@ -20,7 +20,7 @@ const TrendingCarousel = () => {
     <div>
       <PageLayout>
         {/* Section Header */}
-        <div className="mb-8">
+        <div className="mb-8 md:pt-10">
           <h2 className="text-2xl sm:text-4xl font-medium text-title tracking-tight">
             Trending Products
           </h2>

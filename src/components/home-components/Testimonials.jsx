@@ -113,6 +113,7 @@ const Testimonials = () => {
                                                         src={testimonial.image}
                                                         alt="Quote Icon"
                                                         fill
+                                                        sizes="(max-width: 768px) 40px, 64px"
                                                     />
                                                 </div>
                                                 <div>

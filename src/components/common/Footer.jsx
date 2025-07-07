@@ -56,12 +56,13 @@ const Footer = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-18 ">
                         {/* Logo and Description */}
                         <div className="flex flex-col justify-start items-start gap-4">
-                            <div className="relative w-[150px] h-[50px]">
+                            <div className="relative w-[150px] h-auto">
                                 <Image
                                     src="/images/logo.png"
                                     alt="TripleM Collectibles Logo"
-                                    fill
-                                    sizes="150px"
+                                    width={150}
+                                    height={50}
+                                    style={{ width: '100%', height: 'auto'}}
                                 />
                             </div>
                             <p className="text-gray-300 text-sm leading-relaxed">

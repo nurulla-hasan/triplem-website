@@ -16,6 +16,7 @@ const Collecting = () => {
                 src="/images/offer1.jpg"
                 alt="Working on laptop"
                 fill
+                sizes="(max-width: 768px) 240px, 340px"
                 className="object-cover"
               />
             </div>
@@ -26,6 +27,7 @@ const Collecting = () => {
                 src="/images/offer2.jpg"
                 alt="Shopping Bag"
                 fill
+                sizes="(max-width: 768px) 240px, 340px"
                 className="object-cover"
               />
             </div>

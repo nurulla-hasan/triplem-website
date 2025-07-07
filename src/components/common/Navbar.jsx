@@ -20,7 +20,7 @@ const Navbar = () => {
     const navLinks = [
         { name: "Home", href: "/" },
         { name: "About", href: "/about" },
-        { name: "Contact Us", href: "/contact-us" },
+        { name: "Contact Us", href: "/contact" },
         { name: "Help", href: "/help" },
     ];
 
@@ -46,7 +46,7 @@ const Navbar = () => {
                                                 priority
                                                 width={120}
                                                 height={48}
-                                                className="md:h-12 h-10 w-auto"
+                                                className="md:h-12 h-10 w-auto" style={{ width: 'auto', height: 'auto' }}
                                             />
                                         </Link>
                                         <SheetTitle className="sr-only">Main Menu</SheetTitle>
@@ -87,7 +87,7 @@ const Navbar = () => {
                                     width={120}
                                     height={48}
                                     priority
-                                    className="md:h-12 h-10 w-auto"
+                                    className="md:h-12 h-10 w-auto" style={{ width: 'auto', height: 'auto' }}
                                 />
                             </Link>
                         </div>

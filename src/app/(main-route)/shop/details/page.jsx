@@ -62,9 +62,9 @@ const DetailsPage = () => {
                                 <Image
                                     src={mainImage}
                                     alt={`${product.name} - main image`}
-                                    layout="fill"
-                                    objectFit="cover"
-                                    className="rounded-lg"
+                                    fill
+                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                    className="rounded-lg object-cover"
                                 />
                             </div>
                         )}
@@ -81,9 +81,9 @@ const DetailsPage = () => {
                                     <Image
                                         src={image}
                                         alt={`${product.name} - image ${index + 1}`}
-                                        layout="fill"
-                                        objectFit="cover"
-                                        className="rounded-lg"
+                                        fill
+                                        sizes="(max-width: 768px) 50vw, (max-width: 1200px) 25vw, 17vw"
+                                        className="rounded-lg object-cover"
                                     />
                                 </div>
                             )

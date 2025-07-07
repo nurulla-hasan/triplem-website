@@ -33,14 +33,14 @@ export default function RootLayout({ children }) {
 
       >
         <NextTopLoader color="#E4AF00" height={2} showSpinner={false} />
-        <ThemeProvider
+        {/* <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
-        >
+        > */}
           {children}
-        </ThemeProvider>
+        {/* </ThemeProvider> */}
       </body>
     </html>
   );

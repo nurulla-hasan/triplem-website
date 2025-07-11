@@ -60,6 +60,66 @@ export const products = [
         currency: "$",
         description: "Highly detailed collectible action figure."
     },
+    {
+        id: "7",
+        title: "Booster Box",
+        image: "/images/product (7).png",
+        price: 120,
+        oldPrice: 150,
+        rating: 4.9,
+        currency: "$",
+        description: "A booster box with 36 packs."
+    },
+    {
+        id: "8",
+        title: "Charizard UPC",
+        image: "/images/product (8).png",
+        price: 120,
+        oldPrice: 140,
+        rating: 5.0,
+        currency: "$",
+        description: "A sought-after Charizard Ultra-Premium Collection."
+    },
+    {
+        id: "9",
+        title: "Mystery Box",
+        image: "/images/product (9).png",
+        price: 100,
+        oldPrice: null,
+        rating: 4.7,
+        currency: "$",
+        description: "A mystery box with assorted items."
+    },
+    {
+        id: "10",
+        title: "Slabbed Card",
+        image: "/images/product (10).png",
+        price: 80,
+        oldPrice: 100,
+        rating: 4.8,
+        currency: "$",
+        description: "A professionally graded and slabbed trading card."
+    },
+    {
+        id: "11",
+        title: "Sports Jersey",
+        image: "/images/product (11).png",
+        price: 90,
+        oldPrice: 110,
+        rating: 4.6,
+        currency: "$",
+        description: "An authentic sports jersey."
+    },
+    {
+        id: "12",
+        title: "Trading Card Binder",
+        image: "/images/product (12).png",
+        price: 25,
+        oldPrice: 30,
+        rating: 4.9,
+        currency: "$",
+        description: "A binder to store and protect your trading cards."
+    },
 ];
 
 

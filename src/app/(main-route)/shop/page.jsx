@@ -234,7 +234,7 @@ const ShopPage = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-7 gap-6 min-h-screen mt-4">
                     {/* Desktop Filter Column (md:col-span-2) */}
-                    <div className="hidden md:block md:col-span-2">
+                    <div className="hidden md:block md:col-span-2 sticky top-24 h-fit">
                         <h3 className="text-xl font-medium mb-4 text-title">Filter By</h3>
 
                         <div className="bg-content-bg rounded-lg p-4">

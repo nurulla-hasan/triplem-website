@@ -24,14 +24,14 @@ const Hero = () => {
           </h1>
 
           {/* Subtitle */}
-          <p className="sm:text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto drop-shadow-lg font-medium">
+          <p className="sm:text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto drop-shadow-lg">
             Premium Pokémon packs and sports card singles — shipped fast, packed with care.
           </p>
 
           {/* CTA Button */}
           <div className="flex justify-center">
             <Link href="/shop" passHref>
-              <Button>
+              <Button className={"md:w-44 md:h-14 md:text-lg"}>
                 Shop Now
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>

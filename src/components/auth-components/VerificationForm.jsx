@@ -7,6 +7,8 @@ import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { useRouter } from "next/navigation";
+import { ArrowLeft } from "lucide-react";
+import Link from "next/link";
 
 const verificationSchema = z.object({
   code: z.string().min(6, {
@@ -38,6 +40,9 @@ export function VerificationForm({ className, ...props }) {
       <Card className="overflow-hidden p-0">
         <CardContent className="p-0">
           <form onSubmit={handleSubmit(onSubmit)} className="p-6 md:p-8">
+            <Link href="/auth/forgot-password">
+              <ArrowLeft className="cursor-pointer" />
+            </Link>
             <div className="flex flex-col gap-6">
               <div className="flex flex-col items-center text-center">
                 <h1 className="text-2xl font-semibold text-title mb-2">

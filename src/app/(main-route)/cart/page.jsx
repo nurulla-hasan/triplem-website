@@ -208,7 +208,7 @@ const CartPage = () => {
                         </div>
 
                         {/* Order Overview */}
-                        <div className="lg:col-span-1 p-6 rounded-lg border">
+                        <div className="lg:col-span-1 p-6 rounded-lg border bg-content-bg">
                             <h2 className="text-xl font-medium text-title mb-4">Order Overview</h2>
                             <div className="space-y-3">
                                 <div className="flex justify-between items-center text-subtitle">

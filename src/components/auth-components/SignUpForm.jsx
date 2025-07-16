@@ -9,7 +9,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { Eye, EyeOff } from "lucide-react";
+import { ArrowLeft, Eye, EyeOff } from "lucide-react";
 
 const signUpSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
@@ -43,6 +43,9 @@ export function SignUpForm({ className, ...props }) {
       <Card className="overflow-hidden p-0">
         <CardContent className="p-0">
           <form onSubmit={handleSubmit(onSubmit)} className="p-6 md:p-8">
+            <Link href="/">
+              <ArrowLeft className="cursor-pointer" />
+            </Link>
             <div className="flex flex-col gap-6">
               <div className="flex flex-col items-center text-center">
                 <h1 className="text-2xl font-semibold text-title">Create an account</h1>
@@ -56,7 +59,7 @@ export function SignUpForm({ className, ...props }) {
                   {...register("name")}
                 />
                 {errors.name && (
-                  <p className="text-red-500 text-sm">{errors.name.message}</p>
+                  <p className="text-red-500 text-xs ml-1 -mt-2">{errors.name.message}</p>
                 )}
               </div>
               <div className="grid gap-3">
@@ -68,7 +71,7 @@ export function SignUpForm({ className, ...props }) {
                   {...register("email")}
                 />
                 {errors.email && (
-                  <p className="text-red-500 text-sm">{errors.email.message}</p>
+                  <p className="text-red-500 text-xs ml-1 -mt-2">{errors.email.message}</p>
                 )}
               </div>
 
@@ -76,7 +79,7 @@ export function SignUpForm({ className, ...props }) {
                 <div className="flex items-center">
                   <Label htmlFor="password">Password</Label>
                   <Link
-                    href="#"
+                    href="/auth/forgot-password"
                     className="ml-auto text-sm underline-offset-2 hover:underline"
                   >
                     Forgot your password?
@@ -89,22 +92,23 @@ export function SignUpForm({ className, ...props }) {
                     placeholder="********"
                     {...register("password")}
                   />
-                  <button
+                  <Button
+                    variant="ghost"
                     type="button"
                     className="absolute inset-y-0 right-0 flex items-center px-3 text-primary cursor-pointer"
                     onClick={togglePasswordVisibility}
                   >
-                    {showPassword ? <EyeOff size={20}/> : <Eye size={20}/>}
-                  </button>
+                    {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+                  </Button>
                 </div>
                 {errors.password && (
-                  <p className="text-red-500 text-sm">{errors.password.message}</p>
+                  <p className="tex ml-1 -mt-2t-red-500 text-xs">{errors.password.message}</p>
                 )}
               </div>
 
               <div className="grid gap-3">
                 <Label htmlFor="confirmPassword">Confirm Password</Label>
-                <div className="relative">
+                <div className="relativ3">
                   <Input
                     id="confirmPassword"
                     type={showPassword ? "text" : "password"}
@@ -113,7 +117,7 @@ export function SignUpForm({ className, ...props }) {
                   />
                 </div>
                 {errors.confirmPassword && (
-                  <p className="text-red-500 text-sm">{errors.confirmPassword.message}</p>
+                  <p className="text-red-500 text-xs ml-1 -mt-2">{errors.confirmPassword.message}</p>
                 )}
               </div>
 

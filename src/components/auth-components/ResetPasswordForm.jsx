@@ -8,8 +8,9 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { Eye, EyeOff } from "lucide-react";
+import { ArrowLeft, Eye, EyeOff } from "lucide-react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const resetPasswordSchema = z.object({
   newPassword: z.string().min(6, { message: "New password must be at least 6 characters." }),
@@ -46,6 +47,9 @@ export function ResetPasswordForm({ className, ...props }) {
       <Card className="overflow-hidden p-0">
         <CardContent className="p-0">
           <form onSubmit={handleSubmit(onSubmit)} className="p-6 md:p-8">
+            <Link href="/auth/verification">
+              <ArrowLeft className="cursor-pointer" />
+            </Link>
             <div className="flex flex-col gap-6">
               <div className="flex flex-col items-center text-center">
                 <h1 className="text-2xl font-semibold text-title">Reset Your Password</h1>
@@ -66,11 +70,11 @@ export function ResetPasswordForm({ className, ...props }) {
                     className="absolute inset-y-0 right-0 flex items-center px-3 text-primary cursor-pointer"
                     onClick={toggleNewPasswordVisibility}
                   >
-                    {showNewPassword ? <EyeOff size={20}/> : <Eye size={20}/>}
+                    {showNewPassword ? <EyeOff size={20} /> : <Eye size={20} />}
                   </button>
                 </div>
                 {errors.newPassword && (
-                  <p className="text-red-500 text-sm">{errors.newPassword.message}</p>
+                  <p className="text-red-500 text-xs ml-1 -mt-2">{errors.newPassword.message}</p>
                 )}
               </div>
 
@@ -88,11 +92,11 @@ export function ResetPasswordForm({ className, ...props }) {
                     className="absolute inset-y-0 right-0 flex items-center px-3 text-primary cursor-pointer"
                     onClick={toggleConfirmNewPasswordVisibility}
                   >
-                    {showConfirmNewPassword ? <EyeOff size={20}/> : <Eye size={20}/>}
+                    {showConfirmNewPassword ? <EyeOff size={20} /> : <Eye size={20} />}
                   </button>
                 </div>
                 {errors.confirmNewPassword && (
-                  <p className="text-red-500 text-sm">{errors.confirmNewPassword.message}</p>
+                  <p className="text-red-500 text-xs ml-1 -mt-2">{errors.confirmNewPassword.message}</p>
                 )}
               </div>
 

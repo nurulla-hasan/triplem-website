@@ -29,8 +29,8 @@ const Navbar = () => {
     ];
 
     return (
-        <div className="h-[81px]">
-            <nav className="bg-content-bg  fixed top-0 left-0 right-0 z-50">
+        <nav className="h-[81px]">
+            <div className="shadow-sm bg-content-bg fixed top-0 left-0 right-0 z-50">
                 <div className="max-w-7xl mx-auto px-4 xl:px-0 py-2">
                     <div className="flex items-center justify-between h-16">
                         <div className="lg:hidden flex items-center">
@@ -238,8 +238,8 @@ const Navbar = () => {
                         </div>
                     </div>
                 </div>
-            </nav>
-        </div>
+            </div>
+        </nav>
     );
 };
 

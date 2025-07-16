@@ -16,7 +16,7 @@ import * as React from "react"
 const Navbar = () => {
     // const { setTheme } = useTheme()
     const [isLoggedIn, setIsLoggedIn] = useState(true);
-    const [userName, setUserName] = useState("John Doe");
+    const [userName, setUserName] = useState("Golap Hasan");
     const [showSearchInput, setShowSearchInput] = useState(false);
 
     const pathname = usePathname();
@@ -165,32 +165,40 @@ const Navbar = () => {
                                         <div>
                                             <DropdownMenuLabel className="md:hidden text-center">{userName}</DropdownMenuLabel>
                                             <DropdownMenuSeparator className={"md:hidden"} />
-                                            <DropdownMenuItem>
-                                                <User className="mr-2 h-4 w-4" />
-                                                <Link href="/profile">My Account</Link>
-                                            </DropdownMenuItem>
+                                            <Link href="/profile">
+                                                <DropdownMenuItem className={"cursor-pointer"}>
+                                                    <User className="mr-2 h-4 w-4" />
+                                                    <span>My Account</span>
+                                                </DropdownMenuItem>
+                                            </Link>
                                             <DropdownMenuSeparator />
-                                            <DropdownMenuItem>
-                                                <ShoppingBasket className="mr-2 h-4 w-4" />
-                                                <Link href="/my-orders">My Order</Link>
-                                            </DropdownMenuItem>
-                                            <DropdownMenuSeparator />
-                                            <DropdownMenuItem>
+                                            <Link href="/my-orders">
+                                                <DropdownMenuItem className={"cursor-pointer"}>
+                                                    <ShoppingBasket className="mr-2 h-4 w-4" />
+                                                    <span>My Order</span>
+                                                </DropdownMenuItem>
+                                                <DropdownMenuSeparator />
+                                            </Link>
+                                            <DropdownMenuItem onClick={() => setIsLoggedIn(false)} className={"cursor-pointer"}>
                                                 <LogOut className="mr-2 h-4 w-4 text-red-500" />
-                                                <button onClick={() => setIsLoggedIn(false)}>Logout</button>
+                                                <span className="text-red-500">Logout</span>
                                             </DropdownMenuItem>
                                         </div>
                                     ) : (
                                         <>
-                                            <DropdownMenuItem>
-                                                <UserPlus className="mr-2 h-4 w-4" />
-                                                <Link href="/auth/sign-up">Sign Up</Link>
-                                            </DropdownMenuItem>
+                                            <Link href="/auth/sign-up">
+                                                <DropdownMenuItem className={"cursor-pointer"}>
+                                                    <UserPlus className="mr-2 h-4 w-4" />
+                                                    <span>Sign Up</span>
+                                                </DropdownMenuItem>
+                                            </Link>
                                             <DropdownMenuSeparator />
-                                            <DropdownMenuItem>
-                                                <User className="mr-2 h-4 w-4" />
-                                                <Link href="/auth/login">Login</Link>
-                                            </DropdownMenuItem>
+                                            <Link href="/auth/login">
+                                                <DropdownMenuItem className={"cursor-pointer"}>
+                                                    <User className="mr-2 h-4 w-4" />
+                                                    <span>Login</span>
+                                                </DropdownMenuItem>
+                                            </Link>
                                         </>
                                     )}
                                 </DropdownMenuContent>

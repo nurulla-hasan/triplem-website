@@ -8,13 +8,13 @@ import { Search, Heart, User, ShoppingBag, Menu, LogOut, UserPlus, ChevronDown, 
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
-// import { useTheme } from "next-themes";
+import { useTheme } from "next-themes";
 import * as React from "react"
-// import { Moon, Sun } from "lucide-react"
+import { Moon, Sun } from "lucide-react"
 
 
 const Navbar = () => {
-    // const { setTheme } = useTheme()
+    const { setTheme } = useTheme()
     const [isLoggedIn, setIsLoggedIn] = useState(true);
     const [userName, setUserName] = useState("Golap Hasan");
     const [showSearchInput, setShowSearchInput] = useState(false);
@@ -215,7 +215,7 @@ const Navbar = () => {
                             </Link>
 
                             {/* Dark/Light Mode Toggle */}
-                            {/* <DropdownMenu>
+                            <DropdownMenu>
                                 <DropdownMenuTrigger asChild>
                                     <Button variant="ghost" size="icon">
                                         <Sun className="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
@@ -234,7 +234,7 @@ const Navbar = () => {
                                         System
                                     </DropdownMenuItem>
                                 </DropdownMenuContent>
-                            </DropdownMenu> */}
+                            </DropdownMenu>
                         </div>
                     </div>
                 </div>

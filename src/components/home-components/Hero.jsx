@@ -13,7 +13,7 @@ const Hero = () => {
       }}
     >
       {/* Dark overlay for better text readability */}
-      <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/85 to-black/20"></div>
+      <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/80 to-black/0"></div>
 
       {/* Content above the overlay */}
       <div className="relative z-20 container mx-auto px-4">

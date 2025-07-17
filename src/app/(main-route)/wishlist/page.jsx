@@ -14,9 +14,11 @@ const Wishlist = () => {
     ];
     const handleWishlistClick = (e, productId) => {
         e.stopPropagation();
-        // Add your wishlist logic here
+        // Add your wishlist logic here 
         console.log(`Product ${productId} added to wishlist`);
     };
+
+    const favoriteProducts = products.filter((product) => product.isFavorite);
 
     return (
         <div className="min-h-minus-header">
@@ -26,8 +28,8 @@ const Wishlist = () => {
                 <div className="text-subtitle mb-4">
                     Showing {products.length} results
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                    {products.map((product) => (
+                <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    {favoriteProducts.map((product) => (
                         <div key={product.id} className="p-1">
                             <div className="overflow-hidden relative">
                                 {/* Product Image */}
@@ -46,7 +48,7 @@ const Wishlist = () => {
                                     className="absolute top-2 right-2 z-10 bg-primary/10 backdrop-blur-xs rounded-full p-2 cursor-pointer"
                                     onClick={(e) => handleWishlistClick(e, product.id)}
                                 >
-                                    <Heart className="w-6 h-6 text-primary fill-/10" />
+                                    <Heart className={`w-6 h-6 text-primary ${product.isFavorite ? "fill-primary" : ""}`} />
                                 </div>
 
                                 <div className="mt-4 px-2">
@@ -61,7 +63,7 @@ const Wishlist = () => {
                                             )}
                                         </div>
                                         <p className="flex items-center gap-1 text-sm">
-                                            <Star className="w-4 h-4 text-yellow-500" />
+                                            <Star className="w-4 h-4 text-primary" />
                                             {product.rating}
                                         </p>
                                     </div>

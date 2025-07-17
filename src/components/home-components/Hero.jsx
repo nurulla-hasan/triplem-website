@@ -6,10 +6,9 @@ import { ArrowRight } from "lucide-react"
 const Hero = () => {
   return (
     <div
-      className="relative w-full min-h-minus-header flex items-center justify-center text-center md:bg-[center_bottom] bg-cover bg-no-repeat"
+      className="relative w-full min-h-minus-header flex items-center justify-center text-center lg:bg-[center_bottom] bg-cover bg-no-repeat"
       style={{
         backgroundImage: "url('/images/hero.jpg')",
-        // backgroundPosition: "center bottom",
       }}
     >
       {/* Dark overlay for better text readability */}

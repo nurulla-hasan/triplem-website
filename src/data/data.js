@@ -3,6 +3,7 @@ export const products = [
     {
         id: "1",
         title: "Great Ball Mystery Bag",
+        isFavorite: false,
         image: "/images/product (1).png",
         price: 40,
         oldPrice: 55,
@@ -13,6 +14,7 @@ export const products = [
     {
         id: "2",
         title: "Toronto Raptors Jersey",
+        isFavorite: true,
         image: "/images/product (2).png",
         price: 40,
         oldPrice: 55,
@@ -23,6 +25,7 @@ export const products = [
     {
         id: "3",
         title: "Pokémon TCG Set",
+        isFavorite: true,
         image: "/images/product (3).png",
         price: 40,
         oldPrice: 55,
@@ -33,6 +36,7 @@ export const products = [
     {
         id: "4",
         title: "Lakers Basketball Jersey",
+        isFavorite: false,
         image: "/images/product (4).png",
         price: 40,
         oldPrice: 55,
@@ -43,6 +47,7 @@ export const products = [
     {
         id: "5",
         title: "Vintage Sports Card",
+        isFavorite: true,
         image: "/images/product (5).png",
         price: 65,
         oldPrice: 80,
@@ -53,6 +58,7 @@ export const products = [
     {
         id: "6",
         title: "Collectible Action Figure",
+        isFavorite: true,
         image: "/images/product (6).png",
         price: 30,
         oldPrice: 45,
@@ -63,6 +69,7 @@ export const products = [
     {
         id: "7",
         title: "Booster Box",
+        isFavorite: false,
         image: "/images/product (7).png",
         price: 120,
         oldPrice: 150,
@@ -73,6 +80,7 @@ export const products = [
     {
         id: "8",
         title: "Charizard UPC",
+        isFavorite: false,
         image: "/images/product (8).png",
         price: 120,
         oldPrice: 140,
@@ -83,6 +91,7 @@ export const products = [
     {
         id: "9",
         title: "Mystery Box",
+        isFavorite: true,
         image: "/images/product (9).png",
         price: 100,
         oldPrice: null,
@@ -93,6 +102,7 @@ export const products = [
     {
         id: "10",
         title: "Slabbed Card",
+        isFavorite: false,
         image: "/images/product (10).png",
         price: 80,
         oldPrice: 100,
@@ -103,6 +113,7 @@ export const products = [
     {
         id: "11",
         title: "Sports Jersey",
+        isFavorite: true,
         image: "/images/product (11).png",
         price: 90,
         oldPrice: 110,
@@ -113,6 +124,7 @@ export const products = [
     {
         id: "12",
         title: "Trading Card Binder",
+        isFavorite: false,
         image: "/images/product (12).png",
         price: 25,
         oldPrice: 30,

@@ -69,7 +69,7 @@ const MyOrdersPage = () => {
             case "Delivered":
                 return "text-green-600";
             default:
-                return "text-gray-600";
+                return "text-subtitle";
         }
     };
 
@@ -152,7 +152,7 @@ const MyOrdersPage = () => {
                                 <div key={order.id} className="border rounded-lg p-4 space-y-4">
                                     <div className="flex justify-between items-start">
                                         <div className="flex flex-col">
-                                            <span className="text-sm font-medium text-gray-800">Order: {order.orderNumber}</span>
+                                            <span className="text-sm font-medium text-title">Order: {order.orderNumber}</span>
                                             <span className="text-xs text-subtitle">{order.date}</span>
                                         </div>
                                         <span className={`text-sm font-medium ${getStatusColor(order.status)}`}>{order.status}</span>
@@ -168,9 +168,9 @@ const MyOrdersPage = () => {
                                             />
                                         </div>
                                         <div className="flex flex-col flex-grow">
-                                            <span className="font-medium text-gray-800 mb-1">{order.product.name}</span>
+                                            <span className="font-medium text-title mb-1">{order.product.name}</span>
                                             <span className="text-sm text-subtitle">Qty: {order.product.qty}</span>
-                                            <span className="text-md font-semibold text-gray-800 mt-1">Total: ${order.total.toFixed(2)}</span>
+                                            <span className="text-md font-semibold text-title mt-1">Total: ${order.total.toFixed(2)}</span>
                                         </div>
                                     </div>
                                     <Dialog>
@@ -212,7 +212,7 @@ const MyOrdersPage = () => {
                                             <button
                                                 key={star}
                                                 onClick={() => setValue("rating", star)}
-                                                className={`${star <= rating ? "text-yellow-500" : "text-gray-300"}`}
+                                                className={`${star <= rating ? "text-primary" : "text-subtitle/70"}`}
                                             >
                                                 <Star size={20} />
                                             </button>

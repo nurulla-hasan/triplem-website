@@ -88,7 +88,7 @@ const ShopPage = () => {
                                     <Filter size={20} className="text-primary cursor-pointer" />
                                 </SheetTrigger>
                                 <SheetContent side="left" className="w-3/4 p-4">
-                                    <SheetTitle className="text-xl font-semibold mb-4 text-gray-800">Filter By</SheetTitle>
+                                    <SheetTitle className="text-xl font-semibold mb-4 text-title">Filter By</SheetTitle>
                                     <SheetDescription className="sr-only">
                                         Use these options to filter products by category, availability, price range, and rating.
                                     </SheetDescription>
@@ -199,7 +199,7 @@ const ShopPage = () => {
                                             {[1, 2, 3, 4, 5].map((starNum) => (
                                                 <Star
                                                     key={starNum}
-                                                    className={`h-6 w-6 cursor-pointer ${starNum <= selectedRating ? 'text-yellow-400 fill-yellow-400' : 'text-gray-300'}`}
+                                                    className={`h-6 w-6 cursor-pointer ${starNum <= selectedRating ? 'text-primary fill-primary' : 'text-subtitle/70'}`}
                                                     onClick={() => handleRatingClick(starNum)}
                                                 />
                                             ))}
@@ -345,7 +345,7 @@ const ShopPage = () => {
                                     {[1, 2, 3, 4, 5].map((starNum) => (
                                         <Star
                                             key={starNum}
-                                            className={`h-4 w-4 cursor-pointer ${starNum <= selectedRating ? 'text-yellow-400 fill-yellow-400' : 'text-gray-300'}`}
+                                            className={`h-4 w-4 cursor-pointer ${starNum <= selectedRating ? 'text-yellow-400 fill-yellow-400' : 'text-subtitle/70'}`}
                                             onClick={() => handleRatingClick(starNum)}
                                         />
                                     ))}
@@ -359,7 +359,7 @@ const ShopPage = () => {
                         <div className="text-subtitle mb-4">
                             Showing {products.length} results
                         </div>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                             {products.map((product) => (
                                 <div key={product.id} className="p-1">
                                     <div className="overflow-hidden relative">
@@ -379,7 +379,7 @@ const ShopPage = () => {
                                             className="absolute top-2 right-2 z-10 bg-primary/10 backdrop-blur-xs rounded-full p-2 cursor-pointer"
                                             onClick={(e) => handleWishlistClick(e, product.id)}
                                         >
-                                            <Heart className="w-6 h-6 text-primary fill-/10" />
+                                            <Heart className={`w-6 h-6 text-primary ${product.isFavorite ? "fill-primary" : ""}`} />
                                         </div>
 
                                         <div className="mt-4 px-2">
@@ -394,7 +394,7 @@ const ShopPage = () => {
                                                     )}
                                                 </div>
                                                 <p className="flex items-center gap-1 text-sm">
-                                                    <Star className="w-4 h-4 text-yellow-500" />
+                                                    <Star className="w-4 h-4 text-primary" />
                                                     {product.rating}
                                                 </p>
                                             </div>

@@ -16,13 +16,14 @@ import { productDetailsDataMap } from "@/data/data";
 import { Separator } from "@/components/ui/separator";
 import SimilarProducts from "@/components/shop/details/SimilarProducts";
 import Link from "next/link";
+import { toast } from "sonner"
 
 const DetailsPage = () => {
     const product = productDetailsDataMap["1"];
 
     const [mainImage, setMainImage] = useState(product.images[0]);
     const [selectedSize, setSelectedSize] = useState(product.sizes[0]);
-    const [selectedColor, setSelectedColor] = useState(product.colors[0].hex);
+    const [selectedColor, setSelectedColor] = useState(product.colors[0].name);
     const [quantity, setQuantity] = useState(1);
 
 
@@ -39,6 +40,17 @@ const DetailsPage = () => {
             setQuantity((prev) => prev - 1);
         }
     };
+
+    const handleAddToCart = (product, selectedSize, selectedColor, quantity) => {
+        console.log(product, selectedSize, selectedColor, quantity);
+        toast("Product added to cart successfully.", {
+            icon: "👏",
+            style: {
+                borderRadius: "10px",
+            },
+            duration: 3000,
+        })
+    }
 
     return (
         <div className='min-h-minus-header'>
@@ -179,7 +191,7 @@ const DetailsPage = () => {
                                     <Plus className="size-4" />
                                 </Button>
                             </div>
-                            <Button className="flex-1 font-medium rounded-md shadow-md">
+                            <Button onClick={() => handleAddToCart(product, selectedSize, selectedColor, quantity)} className="flex-1 font-medium rounded-md shadow-md">
                                 <ShoppingCart className="size-5 mr-2" />
                                 Add To Cart
                             </Button>

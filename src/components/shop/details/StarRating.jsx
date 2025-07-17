@@ -21,7 +21,7 @@ const StarRating = ({ rating, totalStars = 5, starClassName, containerClassName 
                 ? "text-primary fill-primary"
                 : hasHalfStar && starNumber === fullStars + 1
                 ? "text-primary fill-primary/10"
-                : "text-gray-300"
+                : "text-subtitle/70"
             )}
           />
         );

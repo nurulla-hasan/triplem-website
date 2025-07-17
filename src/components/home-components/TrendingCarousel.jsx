@@ -54,7 +54,7 @@ const TrendingCarousel = () => {
                       className="absolute top-2 right-2 z-10 bg-primary/10 backdrop-blur-xs rounded-full p-2 cursor-pointer"
                       onClick={(e) => handleWishlistClick(e, product.id)}
                     >
-                      <Heart className="w-6 h-6 text-primary fill-/10" />
+                     <Heart className={`w-6 h-6 text-primary ${product.isFavorite ? "fill-primary" : ""}`} />
                     </div>
                     
                     <div className="mt-4 px-2">
@@ -71,7 +71,7 @@ const TrendingCarousel = () => {
                           )}
                         </div>
                         <p className="flex items-center gap-1 text-sm">
-                          <Star className="w-4 h-4 text-yellow-500" />
+                          <Star className="w-4 h-4 text-primary" />
                           {product.rating}
                         </p>
                       </div>

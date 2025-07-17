@@ -1,5 +1,5 @@
 "use client";
-import { VerificationForm } from '@/components/auth-components/VerificationForm';
+import { VerificationForm } from '@/components/auth/VerificationForm';
 
 
 const VerificationPage = () => {

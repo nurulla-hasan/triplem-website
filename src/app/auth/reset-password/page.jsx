@@ -1,5 +1,5 @@
 "use client";
-import { ResetPasswordForm } from '@/components/auth-components/ResetPasswordForm';
+import { ResetPasswordForm } from '@/components/auth/ResetPasswordForm';
 
 
 const ResetPassPage = () => {

@@ -1,4 +1,4 @@
-import { SignUpForm } from "@/components/auth-components/SignUpForm";
+import { SignUpForm } from "@/components/auth/SignUpForm";
 
 
 

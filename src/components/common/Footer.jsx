@@ -65,7 +65,7 @@ const Footer = () => {
                                     style={{ width: '100%', height: 'auto'}}
                                 />
                             </div>
-                            <p className="text-subtitle/70 text-sm leading-relaxed">
+                            <p className="text-white/70 text-sm leading-relaxed">
                                 Collect smarter with authentic products, fair prices, and a platform built just for hobbyists.
                             </p>
                         </div>
@@ -76,9 +76,9 @@ const Footer = () => {
                                 Company & Legal
                             </h4>
                             <ul className="space-y-3">
-                                <li><Link href="/about" className="text-subtitle/70 text-sm hover:text-prbg-primary transition-colors">About Us</Link></li>
-                                <li><Link href="/terms" className="text-subtitle/70 text-sm hover:text-prbg-primary transition-colors">Terms & Conditions</Link></li>
-                                <li><Link href="/privacy" className="text-subtitle/70 text-sm hover:text-prbg-primary transition-colors">Privacy Policy</Link></li>
+                                <li><Link href="/about" className="text-white/70 text-sm hover:text-prbg-primary transition-colors">About Us</Link></li>
+                                <li><Link href="/terms" className="text-white/70 text-sm hover:text-prbg-primary transition-colors">Terms & Conditions</Link></li>
+                                <li><Link href="/privacy" className="text-white/70 text-sm hover:text-prbg-primary transition-colors">Privacy Policy</Link></li>
                             </ul>
                         </div>
 
@@ -88,9 +88,9 @@ const Footer = () => {
                                 Help & Contact
                             </h4>
                             <ul className="space-y-3">
-                                <li><Link href="/faq" className="text-subtitle/70 text-sm hover:text-prbg-primary transition-colors">FAQs</Link></li>
-                                <li><Link href="/help" className="text-subtitle/70 text-sm hover:text-prbg-primary transition-colors">Help & Support</Link></li>
-                                <li><Link href="/contact" className="text-subtitle/70 text-sm hover:text-prbg-primary transition-colors">Contact Us</Link></li>
+                                <li><Link href="/faq" className="text-white/70 text-sm hover:text-prbg-primary transition-colors">FAQs</Link></li>
+                                <li><Link href="/help" className="text-white/70 text-sm hover:text-prbg-primary transition-colors">Help & Support</Link></li>
+                                <li><Link href="/contact" className="text-white/70 text-sm hover:text-prbg-primary transition-colors">Contact Us</Link></li>
                             </ul>
                         </div>
 
@@ -99,17 +99,17 @@ const Footer = () => {
                             <h4 className="text-white font-semibold text-lg mb-4">
                                 Our Address
                             </h4>
-                            <address className="not-italic space-y-3 text-subtitle/70 text-sm">
+                            <address className="not-italic space-y-3 text-white/70 text-sm">
                                 <div className="flex items-start gap-3">
-                                    <MapPin className="h-5 w-5 text-subtitle shrink-0 mt-1" />
+                                    <MapPin className="h-5 w-5 text-white/70 shrink-0 mt-1" />
                                     <span>4517 Washington Ave. Manchester,<br />Kentucky 39495</span>
                                 </div>
                                 <div className="flex items-center gap-3">
-                                    <Phone className="h-5 w-5 text-subtitle shrink-0" />
+                                    <Phone className="h-5 w-5 text-white/70 shrink-0" />
                                     <span>(307) 555-0133</span>
                                 </div>
                                 <div className="flex items-center gap-3">
-                                    <Mail className="h-5 w-5 text-subtitle shrink-0" />
+                                    <Mail className="h-5 w-5 text-white/70 shrink-0" />
                                     <span>debra.holt@example.com</span>
                                 </div>
                             </address>
@@ -124,16 +124,16 @@ const Footer = () => {
                         <div className="flex flex-col lg:flex-row justify-between items-center gap-4">
                             <div className="flex space-x-6">
                                 <Link href="#" aria-label="Instagram" className="w-8 h-8 border border-gray-600 rounded-full flex items-center justify-center hover:bg-prbg-primary hover:border-prbg-primary transition-colors">
-                                    <Instagram className="w-4 h-4 text-subtitle/70 hover:text-black transition-colors" />
+                                    <Instagram className="w-4 h-4 text-white/70 hover:text-black transition-colors" />
                                 </Link>
                                 <Link href="#" aria-label="Twitter" className="w-8 h-8 border border-gray-600 rounded-full flex items-center justify-center hover:bg-prbg-primary hover:border-prbg-primary transition-colors">
-                                    <Twitter className="w-4 h-4 text-subtitle/70 hover:text-black transition-colors" />
+                                    <Twitter className="w-4 h-4 text-white/70 hover:text-black transition-colors" />
                                 </Link>
                                 <Link href="#" aria-label="Facebook" className="w-8 h-8 border border-gray-600 rounded-full flex items-center justify-center hover:bg-prbg-primary hover:border-prbg-primary transition-colors">
-                                    <Facebook className="w-4 h-4 text-subtitle/70 hover:text-black transition-colors" />
+                                    <Facebook className="w-4 h-4 text-white/70 hover:text-black transition-colors" />
                                 </Link>
                                 <Link href="#" aria-label="YouTube" className="w-8 h-8 border border-gray-600 rounded-full flex items-center justify-center hover:bg-prbg-primary hover:border-prbg-primary transition-colors">
-                                    <Youtube className="w-4 h-4 text-subtitle/70 hover:text-black transition-colors" />
+                                    <Youtube className="w-4 h-4 text-white/70 hover:text-black transition-colors" />
                                 </Link>
                                 {/* Changed from Pinterest to MessageCircleHeart based on your import */}
 
@@ -143,7 +143,7 @@ const Footer = () => {
                     </div>
                     <div className="border-b border-gray-500 w-full"></div>
                 </div>
-                <div className="text-subtitle/70 text-sm text-center mt-8">
+                <div className="text-white/70 text-sm text-center mt-8">
                     © 2025 Triplemcollectibles. All right reserved
                 </div>
             </div>

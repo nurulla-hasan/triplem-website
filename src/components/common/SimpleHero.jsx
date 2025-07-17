@@ -43,19 +43,19 @@ const SimpleHero = ({
                     <BreadcrumbItem>
                       {link.href && !link.isCurrent ? (
                         <BreadcrumbLink asChild>
-                          <Link href={link.href} className="text-white hover:text-subtitle/70 transition-colors">
+                          <Link href={link.href} className="text-white hover:text-subtitle transition-colors">
                             {link.name}
                           </Link>
                         </BreadcrumbLink>
                       ) : (
-                        <BreadcrumbPage className="text-subtitle/70">
+                        <BreadcrumbPage className="text-subtitle">
                           {link.name}
                         </BreadcrumbPage>
                       )}
                     </BreadcrumbItem>
                     {index < links.length - 1 && (
                       <BreadcrumbSeparator>
-                        <ChevronRight className="w-4 h-4 mx-2 text-subtitle/70" />
+                        <ChevronRight className="w-4 h-4 mx-2 text-subtitle" />
                       </BreadcrumbSeparator>
                     )}
                   </React.Fragment>

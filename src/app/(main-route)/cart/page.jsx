@@ -135,7 +135,7 @@ const CartPage = () => {
                                                 <Button
                                                     variant="ghost"
                                                     size="icon"
-                                                    className="text-subtitle/70 hover:text-red-500 transition-colors"
+                                                    className="text-subtitle hover:text-red-500 transition-colors"
                                                     onClick={() => handleRemoveItem(item.id)}
                                                 >
                                                     <Trash2 className="size-5" />
@@ -193,7 +193,7 @@ const CartPage = () => {
                                                 <Button
                                                     variant="ghost"
                                                     size="icon"
-                                                    className="text-subtitle/70 hover:text-red-500 transition-colors"
+                                                    className="text-subtitle hover:text-red-500 transition-colors"
                                                     onClick={() => handleRemoveItem(item.id)}
                                                 >
                                                     <Trash2 className="size-5" />

@@ -63,7 +63,7 @@ const Navbar = () => {
                                             placeholder="Search..."
                                             className="pl-10 w-full"
                                         />
-                                        <Search size={18} className="text-subtitle/70 absolute left-8 top-1/2 -translate-y-1/2" />
+                                        <Search size={18} className="text-subtitle absolute left-8 top-1/2 -translate-y-1/2" />
                                     </div>
                                     <nav className="mt-6 flex flex-col space-y-4 pl-8">
                                         {navLinks.map((link) => (

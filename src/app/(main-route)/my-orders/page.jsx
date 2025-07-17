@@ -129,7 +129,7 @@ const MyOrdersPage = () => {
                                                 <DialogTrigger asChild>
                                                     <Button
                                                         variant="outline"
-                                                        className={`text-primary hover:bg-primary/5 border-primary/20 ${order.status !== "Delivered" ? "text-subtitle/70 border-gray-400" : ""}`}
+                                                        className={`text-primary hover:bg-primary/5 border-primary/20 ${order.status !== "Delivered" ? "text-subtitle border-gray-400" : ""}`}
                                                         disabled={order.status !== "Delivered"}
                                                         onClick={() => {
                                                             setIsReviewModalOpen(true);
@@ -177,7 +177,7 @@ const MyOrdersPage = () => {
                                         <DialogTrigger asChild>
                                             <Button
                                                 variant="outline"
-                                                className={`w-full text-primary hover:bg-primary/5 border-primary/20 ${order.status !== "Delivered" ? "text-subtitle/70 border-gray-400" : ""}`}
+                                                className={`w-full text-primary hover:bg-primary/5 border-primary/20 ${order.status !== "Delivered" ? "text-subtitle border-gray-400" : ""}`}
                                                 disabled={order.status !== "Delivered"}
                                                 onClick={() => {
                                                     setIsReviewModalOpen(true);
@@ -212,7 +212,7 @@ const MyOrdersPage = () => {
                                             <button
                                                 key={star}
                                                 onClick={() => setValue("rating", star)}
-                                                className={`${star <= rating ? "text-primary" : "text-subtitle/70"}`}
+                                                className={`${star <= rating ? "text-primary" : "text-subtitle"}`}
                                             >
                                                 <Star size={20} />
                                             </button>

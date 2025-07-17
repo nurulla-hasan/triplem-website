@@ -1,4 +1,4 @@
-// components/shop/details/StarRating.jsx
+"use client";
 import * as React from "react";
 import { Star } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -21,7 +21,7 @@ const StarRating = ({ rating, totalStars = 5, starClassName, containerClassName 
                 ? "text-primary fill-primary"
                 : hasHalfStar && starNumber === fullStars + 1
                 ? "text-primary fill-primary/10"
-                : "text-subtitle/70"
+                : "text-subtitle"
             )}
           />
         );

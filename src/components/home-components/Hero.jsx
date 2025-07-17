@@ -6,14 +6,20 @@ import { ArrowRight } from "lucide-react"
 const Hero = () => {
   return (
     <div
-      className="relative w-full min-h-minus-header flex items-center justify-center text-center bg-cover bg-no-repeat"
+      className="relative w-full min-h-minus-header flex items-center justify-center text-center md:bg-[center_bottom] bg-cover bg-no-repeat"
       style={{
         backgroundImage: "url('/images/hero.jpg')",
-        backgroundPosition: "center bottom",
+        // backgroundPosition: "center bottom",
       }}
     >
       {/* Dark overlay for better text readability */}
-      <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/80 to-black/0"></div>
+      <div
+        className="absolute inset-0 z-10"
+        style={{
+          background: 'linear-gradient(to bottom, #0000007b, #14303856)',
+        }}>
+      </div>
+
 
       {/* Content above the overlay */}
       <div className="relative z-20 container mx-auto px-4">
@@ -31,7 +37,7 @@ const Hero = () => {
           {/* CTA Button */}
           <div className="flex justify-center">
             <Link href="/shop" passHref>
-              <Button className={"md:w-44 md:h-14 md:text-lg"}>
+              <Button className={"md:w-44 md:h-14 md:text-lg hover:text-primary hover:bg-transparent hover:border border-primary"}>
                 Shop Now
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>

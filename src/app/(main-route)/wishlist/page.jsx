@@ -26,7 +26,7 @@ const Wishlist = () => {
 
             <PageLayout>
                 <div className="text-subtitle mb-4">
-                    Showing {products.length} results
+                    Showing {favoriteProducts.length} results
                 </div>
                 <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                     {favoriteProducts.map((product) => (

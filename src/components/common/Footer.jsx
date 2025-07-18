@@ -76,9 +76,9 @@ const Footer = () => {
                                 Company & Legal
                             </h4>
                             <ul className="space-y-3">
-                                <li><Link href="/about" className="text-white/70 text-sm hover:text-prbg-primary transition-colors">About Us</Link></li>
-                                <li><Link href="/terms" className="text-white/70 text-sm hover:text-prbg-primary transition-colors">Terms & Conditions</Link></li>
-                                <li><Link href="/privacy" className="text-white/70 text-sm hover:text-prbg-primary transition-colors">Privacy Policy</Link></li>
+                                <li><Link href="/about" className="text-white/70 text-sm hover:text-primary transition-colors">About Us</Link></li>
+                                <li><Link href="/terms" className="text-white/70 text-sm hover:text-primary transition-colors">Terms & Conditions</Link></li>
+                                <li><Link href="/privacy" className="text-white/70 text-sm hover:text-primary transition-colors">Privacy Policy</Link></li>
                             </ul>
                         </div>
 
@@ -88,9 +88,9 @@ const Footer = () => {
                                 Help & Contact
                             </h4>
                             <ul className="space-y-3">
-                                <li><Link href="/faq" className="text-white/70 text-sm hover:text-prbg-primary transition-colors">FAQs</Link></li>
-                                <li><Link href="/help" className="text-white/70 text-sm hover:text-prbg-primary transition-colors">Help & Support</Link></li>
-                                <li><Link href="/contact" className="text-white/70 text-sm hover:text-prbg-primary transition-colors">Contact Us</Link></li>
+                                <li><Link href="/faq" className="text-white/70 text-sm hover:text-primary transition-colors">FAQs</Link></li>
+                                <li><Link href="/help" className="text-white/70 text-sm hover:text-primary transition-colors">Help & Support</Link></li>
+                                <li><Link href="/contact" className="text-white/70 text-sm hover:text-primary transition-colors">Contact Us</Link></li>
                             </ul>
                         </div>
 

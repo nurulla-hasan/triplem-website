@@ -4,11 +4,11 @@
 import React, { useState } from "react";
 import SimpleHero from "@/components/common/SimpleHero";
 import PageLayout from "@/components/layout/PageLayout";
-import ProfileSidebar from "@/components/profile-components/ProfileSidebar";
-import AccountDetailsTab from "@/components/profile-components/AccountDetailsTab";
-import EditProfileTab from "@/components/profile-components/EditProfileTab";
-import ChangePasswordTab from "@/components/profile-components/ChangePasswordTab";
-import ChangeAddressTab from "@/components/profile-components/ChangeAddressTab";
+import ProfileSidebar from "@/components/profile/ProfileSidebar";
+import AccountDetailsTab from "@/components/profile/AccountDetailsTab";
+import EditProfileTab from "@/components/profile/EditProfileTab";
+import ChangePasswordTab from "@/components/profile/ChangePasswordTab";
+import ChangeAddressTab from "@/components/profile/ChangeAddressTab";
 
 const ProfilePage = () => {
     const heroLinks = [

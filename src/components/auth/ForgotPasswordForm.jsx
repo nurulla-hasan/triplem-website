@@ -20,9 +20,10 @@ export function ForgotPasswordForm({ className, ...props }) {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isValid },
   } = useForm({
     resolver: zodResolver(forgotPasswordSchema),
+    mode: "onChange",
   });
 
   const onSubmit = (data) => {
@@ -57,7 +58,7 @@ export function ForgotPasswordForm({ className, ...props }) {
                 )}
               </div>
 
-              <Button type="submit" className="w-full">
+              <Button type="submit" className="w-full" disabled={!isValid}>
                 Get Code
               </Button>
             </div>

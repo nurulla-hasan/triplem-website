@@ -28,9 +28,10 @@ export function SignUpForm({ className, ...props }) {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isValid },
   } = useForm({
     resolver: zodResolver(signUpSchema),
+    mode: "onChange",
   });
 
   const onSubmit = (data) => {
@@ -121,7 +122,7 @@ export function SignUpForm({ className, ...props }) {
                 )}
               </div>
 
-              <Button type="submit" className="w-full">
+              <Button type="submit" className="w-full" disabled={!isValid}>
                 Sign Up
               </Button>
             </div>

@@ -21,9 +21,10 @@ export function VerificationForm({ className, ...props }) {
   const {
     control,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isValid },
   } = useForm({
     resolver: zodResolver(verificationSchema),
+    mode: "onChange",
     defaultValues: {
       code: "",
     },
@@ -80,7 +81,7 @@ export function VerificationForm({ className, ...props }) {
                 )}
               </div>
 
-              <Button type="submit" className="w-full">
+              <Button type="submit" className="w-full" disabled={!isValid}>
                 Verify
               </Button>
             </div>

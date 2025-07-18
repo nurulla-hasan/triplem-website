@@ -42,7 +42,7 @@ const Quality = () => {
               {/* Icon with blue background */}
               <div className="rounded-full flex items-center mb-6 relative">
                 <div className="w-8 h-8 bg-[#7AA0D5] rounded-full flex items-center justify-center">
-                  <feature.icon className="absolute -top-4 -left-4 w-10 h-10 text-black" />
+                  <feature.icon className="absolute -top-4 -left-4 w-10 h-10" />
                 </div>
               </div>
 

@@ -13,7 +13,7 @@ import {
 
 const Faq = () => {
     return (
-        <div className="bg-content-bg">
+        <div>
             <PageLayout>
                 <ContentHeader title="FAQs" subtitle="Got questions? We’ve got answers — here to help you shop with confidence." />
 
@@ -24,7 +24,7 @@ const Faq = () => {
                             <AccordionItem
                                 key={item.id}
                                 value={item.id}
-                                className="rounded-sm border border-gray-200 data-[state=open]:border-primary mb-4 py-4"
+                                className="bg-background rounded-sm border border-gray-200 data-[state=open]:border-primary mb-4 py-4"
                             >
                                 <AccordionTrigger
                                     className="px-6 py-4 text-lg font-medium text-title hover:no-underline flex justify-between items-center w-full rounded-sm transition-colors duration-200

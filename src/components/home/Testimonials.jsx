@@ -73,7 +73,7 @@ const Testimonials = () => {
     );
 
     return (
-        <div>
+        <div className='bg-content-bg'>
             <PageLayout>
                 <ContentHeader
                     title="Listening to Our Customers"
@@ -91,7 +91,7 @@ const Testimonials = () => {
                     <CarouselContent>
                         {mockTestimonials.map((testimonial) => (
                             <CarouselItem key={testimonial.id} className="md:basis-1/2">
-                                <div className='p-6 md:p-8 rounded-3xl relative bg-content-bg space-y-6 h-full'>
+                                <div className='bg-background p-6 md:p-8 rounded-3xl relative space-y-6 h-full'>
                                     <div className='md:grid grid-cols-5'>
                                         <Image
                                             src="/images/quotation.png"

@@ -6,6 +6,7 @@
   --color-title: #333333;
   --color-subtitle: #5c5c5c;
   --color-content-bg: #f7f7f7;
+  --color-background: #2b2b2b;
 }
 
 @custom-variant dark (&:is(.dark *));
@@ -123,6 +124,7 @@
   --color-title: #efefef; /* Light gray for titles */
   --color-subtitle: #cccccc; /* Slightly darker light gray for subtitles */
   --color-content-bg: #1a1a1a; /* Dark background */
+  --color-background: #ffffff;
 }
 
 ::-webkit-scrollbar {
@@ -150,4 +152,15 @@ body {
 
 .min-h-minus-header {
   min-height: calc(100vh - 81px);
+}
+
+/* Custom selection color */
+::selection {
+  background-color: #FFC107; 
+  color: #333333;
+}
+/* Custom selection color firefox */
+::-moz-selection {
+  background-color: #FFC107;
+  color: #333333;
 }

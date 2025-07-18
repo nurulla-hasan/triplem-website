@@ -52,7 +52,7 @@
 }
 
 :root {
-  --radius: 0.625rem;
+  --radius: 0.525rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
@@ -142,14 +142,17 @@
   }
 }
 
+/* Custom font */
 body {
   font-family: var(--font-poppins), sans-serif;
 }
 
+/* Custom font */
 .font-custom {
   font-family: var(--font-poltawski), serif;
 }
 
+/* Custom height */
 .min-h-minus-header {
   min-height: calc(100vh - 81px);
 }

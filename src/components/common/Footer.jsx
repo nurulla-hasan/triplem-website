@@ -124,16 +124,16 @@ const Footer = () => {
                         <div className="flex flex-col lg:flex-row justify-between items-center gap-4">
                             <div className="flex space-x-6">
                                 <Link href="#" aria-label="Instagram" className="w-8 h-8 border border-gray-600 rounded-full flex items-center justify-center hover:bg-prbg-primary hover:border-prbg-primary transition-colors">
-                                    <Instagram className="w-4 h-4 text-white/70 hover:text-black transition-colors" />
+                                    <Instagram className="w-4 h-4 text-white/70 hover:text-primary transition-colors" />
                                 </Link>
                                 <Link href="#" aria-label="Twitter" className="w-8 h-8 border border-gray-600 rounded-full flex items-center justify-center hover:bg-prbg-primary hover:border-prbg-primary transition-colors">
-                                    <Twitter className="w-4 h-4 text-white/70 hover:text-black transition-colors" />
+                                    <Twitter className="w-4 h-4 text-white/70 hover:text-primary transition-colors" />
                                 </Link>
                                 <Link href="#" aria-label="Facebook" className="w-8 h-8 border border-gray-600 rounded-full flex items-center justify-center hover:bg-prbg-primary hover:border-prbg-primary transition-colors">
-                                    <Facebook className="w-4 h-4 text-white/70 hover:text-black transition-colors" />
+                                    <Facebook className="w-4 h-4 text-white/70 hover:text-primary transition-colors" />
                                 </Link>
                                 <Link href="#" aria-label="YouTube" className="w-8 h-8 border border-gray-600 rounded-full flex items-center justify-center hover:bg-prbg-primary hover:border-prbg-primary transition-colors">
-                                    <Youtube className="w-4 h-4 text-white/70 hover:text-black transition-colors" />
+                                    <Youtube className="w-4 h-4 text-white/70 hover:text-primary transition-colors" />
                                 </Link>
                                 {/* Changed from Pinterest to MessageCircleHeart based on your import */}
 

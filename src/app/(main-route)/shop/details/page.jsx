@@ -52,7 +52,7 @@ const DetailsPage = () => {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 md:items-start gap-8 pb-12">
-                    <ProductImageGallery product={product} mainImage={mainImage} />
+                    <ProductImageGallery product={product} mainImage={mainImage} setMainImage={setMainImage} />
                     <ProductInfo 
                         product={product} 
                         selectedSize={selectedSize} 
@@ -66,7 +66,7 @@ const DetailsPage = () => {
                     />
                 </div>
 
-                
+                <ProductTabs product={product} />
 
                 {/* Similar Products */}
                 <SimilarProducts />

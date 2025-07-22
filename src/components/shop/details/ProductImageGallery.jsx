@@ -2,16 +2,14 @@
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 
-const ProductImageGallery = ({ product, mainImage }) => {
+const ProductImageGallery = ({ product, mainImage, setMainImage }) => {
     return (
-        <div className="grid grid-cols-2 gap-4">
+        <div className="flex flex-col gap-4">
             {product.images && product.images.length > 0 && (
                 <div
                     className={cn(
                         "relative overflow-hidden rounded-lg shadow-sm bg-gray-100",
-                        {
-                            "col-span-2 h-[500px]": true,
-                        }
+                        "h-[500px]"
                     )}
                 >
                     <Image
@@ -24,25 +22,27 @@ const ProductImageGallery = ({ product, mainImage }) => {
                 </div>
             )}
 
-            {product.images && product.images.slice(0, 5).map((image, index) => (
-                index > 0 && (
+            <div className="flex gap-2 overflow-x-auto pb-2">
+                {product.images && product.images.map((image, index) => (
                     <div
                         key={index}
                         className={cn(
-                            "relative overflow-hidden rounded-lg shadow-sm bg-gray-100",
-                            "md:h-[400px] h-[200px]"
+                            "relative overflow-hidden rounded-lg shadow-sm bg-gray-100 cursor-pointer",
+                            "w-24 h-24 flex-shrink-0",
+                            mainImage === image ? "border-2 border-primary" : ""
                         )}
+                        onClick={() => setMainImage(image)}
                     >
                         <Image
                             src={image}
-                            alt={`${product.name} - image ${index + 1}`}
+                            alt={`${product.name} - thumbnail ${index + 1}`}
                             fill
-                            sizes="(max-width: 768px) 50vw, (max-width: 1200px) 25vw, 17vw"
+                            sizes="96px"
                             className="rounded-lg object-cover"
                         />
                     </div>
-                )
-            ))}
+                ))}
+            </div>
         </div>
     );
 };

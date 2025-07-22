@@ -5,7 +5,6 @@ import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Minus, Plus, ShoppingCart, Heart } from "lucide-react";
-import ProductTabs from "./ProductTabs";
 
 const ProductInfo = ({ product, selectedSize, selectedColor, quantity, handleQuantityChange, handleAddToCart, setSelectedSize, setSelectedColor, setMainImage }) => {
     return (
@@ -53,7 +52,6 @@ const ProductInfo = ({ product, selectedSize, selectedColor, quantity, handleQua
                                 style={{ backgroundColor: color.hex }}
                                 onClick={() => {
                                     setSelectedColor(color.hex);
-                                    setMainImage(color.image || product.images[0]);
                                 }}
                                 title={color.name}
                             ></div>
@@ -104,7 +102,6 @@ const ProductInfo = ({ product, selectedSize, selectedColor, quantity, handleQua
                     <Heart className="size-5 text-primary" />
                 </Button>
             </div>
-            <ProductTabs product={product} />
         </div>
     );
 };

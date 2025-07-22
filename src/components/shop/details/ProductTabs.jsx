@@ -1,15 +1,21 @@
 'use client'
+import { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import StarRating from "@/components/shop/details/StarRating";
 import { Button } from "@/components/ui/button";
 import { ChevronRight } from "lucide-react";
-import Link from "next/link";
 
 const ProductTabs = ({ product }) => {
+    const [visibleReviews, setVisibleReviews] = useState(3);
+
+    const handleShowMoreReviews = () => {
+        setVisibleReviews((prev) => prev + 3);
+    };
+
     return (
-        <div className="mt-8">
+        <div>
             {product.descriptionTabs && product.descriptionTabs.length > 0 && (
                 <Tabs defaultValue={product.descriptionTabs[0].title.toLowerCase()} className="w-full">
                     <TabsList className="grid w-full grid-cols-2 lg:grid-cols-5 gap-8 h-auto p-2 bg-content">
@@ -66,12 +72,10 @@ const ProductTabs = ({ product }) => {
                                         </div>
                                         <h3 className="text-lg font-medium text-subtitle">Overall Rating</h3>
                                     </div>
-
-                                    <h4 className="text-subtitle text-sm font-semibold mb-4">Showing {Math.min(tab.reviews, 4)} results</h4>
-                                    <ScrollArea className="h-[510px] pr-4">
+                                    <h4 className="text-subtitle text-sm font-semibold mb-4">Showing {visibleReviews} results</h4>
+                                    <ScrollArea className="h-[450px] pr-4">
                                         <div className="space-y-4">
-                                            {/* Only show the first 4 reviews */}
-                                            {tab.content && tab.content.slice(0, 4).map((review) => (
+                                            {tab.content && tab.content.slice(0, visibleReviews).map((review) => (
                                                 <div key={review.id} className="flex flex-col gap-3 p-4 border rounded-lg">
                                                     <div className="flex justify-between items-center">
                                                         <div className="flex items-center gap-3">
@@ -93,14 +97,11 @@ const ProductTabs = ({ product }) => {
                                             ))}
                                         </div>
                                     </ScrollArea>
-                                    {/* Show "Show More Reviews" button only if there are more than 4 reviews */}
-                                    {tab.content && tab.content.length > 4 && (
-                                        <Link href={`/shop/reviews`}>
-                                            <Button variant="ghost">
-                                                Show More Reviews
-                                                <ChevronRight className="size-4 ml-2" />
-                                            </Button>
-                                        </Link>
+                                    {tab.content && tab.content.length > visibleReviews && (
+                                        <Button variant="ghost" onClick={handleShowMoreReviews}>
+                                            Show More Reviews
+                                            <ChevronRight className="size-4 ml-2" />
+                                        </Button>
                                     )}
                                 </div>
                             )}

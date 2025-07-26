@@ -12,7 +12,7 @@ import {
 import { products } from "@/data/data";
 import CustomBreadcrumb from "@/components/common/CustomBreadcrumb";
 import MobileFilter from "@/components/shop/MobileFilter";
-import DesktopFilter from "@/components/shop/DesktopFilter";
+import DesktopFilter from "@/components/shop/DesktopFilter"; 
 import ShopCard from "@/components/shop/ShopCard";
 
 

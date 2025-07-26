@@ -12,6 +12,8 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Slider } from "@/components/ui/slider";
 import { Filter, Star } from "lucide-react";
 import { Input } from "@/components/ui/input";
+import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
+import { Label } from "../ui/label";
 
 const MobileFilter = ({ priceRange, selectedRating, handleRatingClick, handleSliderChange, handleMaxPriceChange, handleMinPriceChange }) => {
     return (
@@ -71,24 +73,20 @@ const MobileFilter = ({ priceRange, selectedRating, handleRatingClick, handleSli
                                 <AccordionItem value="availability" className="border-b border-gray-200">
                                     <AccordionTrigger className="text-lg font-medium text-subtitle hover:no-underline">Availability</AccordionTrigger>
                                     <AccordionContent className="pt-2 pb-4 space-y-3">
-                                        <div className="flex items-center space-x-2">
-                                            <Checkbox id="inStock-mobile" />
-                                            <label htmlFor="inStock-mobile" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-subtitle">
-                                                In Stock
-                                            </label>
-                                        </div>
-                                        <div className="flex items-center space-x-2">
-                                            <Checkbox id="outOfStock-mobile" />
-                                            <label htmlFor="outOfStock-mobile" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-subtitle">
-                                                Out of Stock
-                                            </label>
-                                        </div>
-                                        <div className="flex items-center space-x-2">
-                                            <Checkbox id="upComing-mobile" />
-                                            <label htmlFor="upComing-mobile" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-subtitle">
-                                                Up Coming
-                                            </label>
-                                        </div>
+                                        <RadioGroup defaultValue="comfortable">
+                                            <div className="flex items-center gap-3">
+                                                <RadioGroupItem value="default" id="r1" />
+                                                <Label htmlFor="r1" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-subtitle">In Stock</Label>
+                                            </div>
+                                            <div className="flex items-center gap-3">
+                                                <RadioGroupItem value="comfortable" id="r2" />
+                                                <Label htmlFor="r2" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-subtitle">Out of Stock</Label>
+                                            </div>
+                                            <div className="flex items-center gap-3">
+                                                <RadioGroupItem value="compact" id="r3" />
+                                                <Label htmlFor="r3" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-subtitle">Up Coming</Label>
+                                            </div>
+                                        </RadioGroup>
                                     </AccordionContent>
                                 </AccordionItem>
                             </Accordion>

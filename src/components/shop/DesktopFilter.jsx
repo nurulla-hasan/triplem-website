@@ -1,17 +1,11 @@
 "use client";
-import {
-    Sheet,
-    SheetContent,
-    SheetDescription,
-    SheetTitle,
-    SheetTrigger,
-} from "@/components/ui/sheet";
-import { ScrollArea } from "@/components/ui/scroll-area"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Slider } from "@/components/ui/slider";
-import { Filter, Star } from "lucide-react";
+import { Star } from "lucide-react";
 import { Input } from "@/components/ui/input";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Label } from "@/components/ui/label";
 
 const DesktopFilter = ({ priceRange, selectedRating, handleRatingClick, handleSliderChange, handleMaxPriceChange, handleMinPriceChange }) => {
     return (
@@ -64,24 +58,20 @@ const DesktopFilter = ({ priceRange, selectedRating, handleRatingClick, handleSl
                         <AccordionItem value="availability" className="border-b border-gray-200">
                             <AccordionTrigger className="text-lg font-medium text-title hover:no-underline">Availability</AccordionTrigger>
                             <AccordionContent className="pt-2 pb-4 space-y-3">
-                                <div className="flex items-center space-x-2">
-                                    <Checkbox id="inStock" />
-                                    <label htmlFor="inStock" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-subtitle">
-                                        In Stock
-                                    </label>
-                                </div>
-                                <div className="flex items-center space-x-2">
-                                    <Checkbox id="outOfStock" />
-                                    <label htmlFor="outOfStock" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-subtitle">
-                                        Out of Stock
-                                    </label>
-                                </div>
-                                <div className="flex items-center space-x-2">
-                                    <Checkbox id="upComing" />
-                                    <label htmlFor="upComing" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-subtitle">
-                                        Up Coming
-                                    </label>
-                                </div>
+                                <RadioGroup defaultValue="comfortable">
+                                    <div className="flex items-center gap-3">
+                                        <RadioGroupItem value="default" id="r1" />
+                                        <Label htmlFor="r1" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-subtitle">In Stock</Label>
+                                    </div>
+                                    <div className="flex items-center gap-3">
+                                        <RadioGroupItem value="comfortable" id="r2" />
+                                        <Label htmlFor="r2" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-subtitle">Out of Stock</Label>
+                                    </div>
+                                    <div className="flex items-center gap-3">
+                                        <RadioGroupItem value="compact" id="r3" />
+                                        <Label htmlFor="r3" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-subtitle">Up Coming</Label>
+                                    </div>
+                                </RadioGroup>
                             </AccordionContent>
                         </AccordionItem>
                     </Accordion>

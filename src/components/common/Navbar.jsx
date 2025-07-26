@@ -88,10 +88,10 @@ const Navbar = () => {
                                 <Image
                                     src="/images/logo.png"
                                     alt="TripleM Collectibles"
-                                    width={120}
-                                    height={48}
+                                    width={124}
+                                    height={32}
                                     priority
-                                    className="md:h-12 h-10 w-auto" style={{ width: 'auto', height: 'auto' }}
+                                    className="md:h-14 h-10 w-auto"
                                 />
                             </Link>
                         </div>

@@ -6,7 +6,7 @@ import { ArrowRight } from "lucide-react"
 const Hero = () => {
   return (
     <div
-      className="relative w-full min-h-minus-header flex items-center justify-center text-center lg:bg-[center_bottom] bg-cover bg-no-repeat"
+      className="relative w-full min-h-minus-header flex items-center justify-center text-center bg-cover bg-no-repeat" //lg:bg-[center_bottom]
       style={{
         backgroundImage: "url('/images/hero.jpg')",
       }}
